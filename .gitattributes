@@ -1,0 +1,2 @@
+ISP_UPDT.BIN filter=lfs diff=lfs merge=lfs -text
+parts/*.bin filter=lfs diff=lfs merge=lfs -text

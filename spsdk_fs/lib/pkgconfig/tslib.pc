@@ -1,0 +1,10 @@
+prefix=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/tslib-1.11/_install//usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: tslib
+Description: Touchscreen Access Library
+Version: 1.11
+Libs: -L${libdir} -lts
+Cflags: -I${includedir}

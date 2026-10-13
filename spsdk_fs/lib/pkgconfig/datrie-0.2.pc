@@ -1,0 +1,10 @@
+prefix=/home/l.wang/prebuilt_1118/prebuiltsrc/../prebuilt/common/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: datrie
+Description: Double-array trie library
+Version: 0.2.2
+Libs: -L${libdir} -ldatrie
+Cflags: -I${includedir}

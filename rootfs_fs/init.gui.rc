@@ -1,0 +1,34 @@
+#Action init
+on init
+    #Setup env variable for system
+    export LD_LIBRARY_PATH /media/flash/nvm/lib:/lib:/usr/lib:/usr/local/lib:/usr/local/qt/lib:/system/lib:/system/qt/lib:/application/lib:/apps/lib:/application/lib/module/default:/application/lib/module
+    export PATH /media/flash/nvm/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/local/qt/bin:/application/bin:/apps/bin
+
+    # QT Environment
+    export QT_CUSTOMIZE_IR_DEVICE /dev/input/event0
+    export QT_QPA_PLATFORM directfb
+    export QT_QPA_PLATFORM_PLUGIN_PATH /usr/local/qt/plugins
+    export QT_QPA_DFB_ENHANCE 2
+
+    # TSLIB Environment
+    export TSLIB_PLUGINDIR /usr/local/lib/ts
+    export TSLIB_CONFFILE /usr/local/etc/ts.conf
+    export TSLIB_FBDEVICE /dev/fb0
+    export TSLIB_TSDEVICE /dev/input/event3
+    #TSLIB_GRAB_ENABLE = 0 is for touch key in panel
+    #export TSLIB_GRAB_ENABLE 0
+
+    #Qt Image Limitation
+    export QT_IMG_MALLOC_KSIZEMAX 20480
+    export QT_GIF_MALLOC_KSIZEMAX 20480
+    export QT_JPG_MALLOC_KSIZEMAX 20480
+
+    #Setup env variable for QT
+    export QT_QPA_FONTDIR /application/fonts
+    export QT_QPA_EVDEV_KEYBOARD_PARAMETERS /dev/input/event1:/dev/input/event3:keymap=/application/keymap/keymap.data
+    export QT_QPA_GENERIC_PLUGINS evdevkeyboard
+    export QT_CUSTOMIZE_EVDEV_IR_PARAMETERS keymap=/application/keymap/Irkeymap.data
+    export QT_CUSTOMIZE_TOUCH_CONF /media/flash/nvm/touch_conf
+
+    #playback service set max malloc size to ffmpeg,3*1024*1024
+    export PSSERVER_AVMALLOC_MAX 3145728

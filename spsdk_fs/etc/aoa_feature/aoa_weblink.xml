@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+	<AoaFeature>
+		<ManuFacturer value="abalta"/>
+		<Model value="weblinkClient"/>
+		<Description value="weblinkClient"/>
+		<Version value="1.0"/>
+		<Url value="http://abaltatech.com/"/>
+		<Serial value="1234567890"/>
+		<Mode value="1"/>
+		<Name value="aoa-weblink%d"/>
+	</AoaFeature>
+</property>

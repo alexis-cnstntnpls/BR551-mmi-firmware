@@ -1,0 +1,10 @@
+prefix=/home/l.wang/prebuilt_1118/prebuiltsrc/../prebuilt/common/usr/local
+exec_prefix=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/utils-linux-2.36/_install//usr/local
+libdir=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/utils-linux-2.36/_install//usr/local/lib
+includedir=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/utils-linux-2.36/_install//usr/local/include
+
+Name: blkid
+Description: Block device id library
+Version: 2.36.0
+Cflags: -I${includedir}/blkid
+Libs: -L${libdir} -lblkid

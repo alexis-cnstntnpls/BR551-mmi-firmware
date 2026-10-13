@@ -1,0 +1,11 @@
+prefix=/home/l.wang/prebuilt_1118/prebuiltsrc/../prebuilt/common/usr/local
+exec_prefix=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/utils-linux-2.36/_install//usr/local
+libdir=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/utils-linux-2.36/_install//usr/local/lib
+includedir=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/utils-linux-2.36/_install//usr/local/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.36.0
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid

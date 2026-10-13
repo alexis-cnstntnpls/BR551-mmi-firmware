@@ -1,0 +1,138 @@
+#!/bin/sh
+mount -a
+mkdir -p /media
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+#sprtlib_mtdid=`cat /proc/mtd | grep sprtlib | sed "s/:.*//" | sed "s/mtd//"`
+#spsdk_mtdid=`cat /proc/mtd | grep spsdk | sed "s/:.*//" | sed "s/mtd//"`
+#spapp_mtdid=`cat /proc/mtd | grep spapp | sed "s/:.*//" | sed "s/mtd//"`
+#
+##exec setsid /bin/sh
+##exec </dev/ttyS0 >/dev/ttyS0 2>&1
+##exec /bin/sh
+#
+#echo -e "Start rcS"
+#echo -e "Start rcS"
+#echo -e "Start rcS"
+#echo -e "Start rcS"
+#echo -e "Start rcS"
+#echo -e "Start rcS"
+#echo -e "Start rcS"
+#echo -e "Start rcS"
+#echo -e "Start rcS"
+#sh echo -e "Start rcS"
+##printf aksdhfkajshdfklajhsdklfhaklsjdfh
+#
+#if [ $sprtlib_mtdid ] && [ $spsdk_mtdid ] && [ $spapp_mtdid ]; then
+#	mkdir -p /sprtlib
+#	mkdir -p /system/lib
+#	mkdir -p /usr/local
+#	mkdir -p /application
+#	mkdir -p /apps/lib
+#	mkdir -p /apps/include
+#	
+#	mount -t squashfs -o loop /dev/blockrom$sprtlib_mtdid /sprtlib
+#	mount -t squashfs -o loop /dev/blockrom$spsdk_mtdid /usr/local
+#	mount -t squashfs -o loop /dev/blockrom$spapp_mtdid /application
+#	
+#	mv /lib /lib_old
+#	ln -s /sprtlib/usr/lib/ /usr/
+#	ln -s /sprtlib/lib/ /lib
+#	
+#	#start sdk & export Env variable.
+#	cd /usr/local/
+#	sh ./sdk_go.sh
+#	
+#	#start application
+#	cd /application
+#	sh ./app_go.sh
+#	
+#	cd ..
+#fi
+#
+#while [ ! -e "/dev/sda1" ]     
+#do
+#echo "wait /dev/sda1 USB 0 plugin"
+#done
+
+#if [ -e "/dev/sda1" ]; then
+#    mkdir -p /mnt/mmcblk0
+#    #mount /dev/mmcblk0p1  /mnt/mmcblk0/
+#    mount /dev/sda1  /mnt/mmcblk0/
+#
+#    # mount runtime library
+#    if [ -e "/mnt/mmcblk0/sprtlib.sqfs" ]; then
+#        echo "mount runtime library"
+#        mkdir -p /sprtlib
+#        mount -t squashfs -o loop /mnt/mmcblk0/sprtlib.sqfs /sprtlib
+#        mv /lib /lib_old
+#        ln -s /sprtlib/usr/lib/ /usr/
+#        ln -s /sprtlib/lib/ /lib
+#    fi
+#
+#    # mount sdk env
+#    if [ -e "/mnt/mmcblk0/spsdk.sqfs" ]; then
+#        echo "mount sdk env"
+#        mkdir -p /usr/local
+#        mount -t squashfs -o loop /mnt/mmcblk0/spsdk.sqfs /usr/local
+#    fi
+#
+#    # create system folder
+#    if [ ! -d "/system" ]; then
+#        mkdir -p /system/lib
+#    fi
+#
+#    # create application folder
+#    if [ ! -d "/application" ]; then
+#        mkdir -p /application
+#        mount -t squashfs -o loop /mnt/mmcblk0/app.sqfs /application
+#    fi
+#
+#    # create apps folder
+#    if [ ! -d "/apps" ]; then
+#        mkdir -p /apps/lib
+#        mkdir -p /apps/include
+#    fi
+#fi
+
+# for usb mount 
+#if [ -e "/dev/sda1" ]; then
+#    mkdir -p /mnt/mmcblk0
+#    #mount /dev/mmcblk0p1  /mnt/mmcblk0/
+#    mount /dev/sda1  /mnt/mmcblk0/
+# 
+#    # mount runtime library
+#    if [ -e "/mnt/mmcblk0/sprtlib.sqfs" ]; then
+#	echo "mount runtime library"
+#	mkdir -p /sprtlib
+#	mount -t squashfs -o loop /mnt/mmcblk0/sprtlib.sqfs /sprtlib
+#	mv /lib /lib_old
+#	ln -s /sprtlib/usr/lib/ /usr/
+#	ln -s /sprtlib/lib/ /lib
+#    fi
+#
+#    # mount sdk env
+#    if [ -e "/mnt/mmcblk0/spsdk.sqfs" ]; then
+#	echo "mount sdk env"
+#	mkdir -p /usr/local
+#	mount -t squashfs -o loop /mnt/mmcblk0/spsdk.sqfs /usr/local
+#    fi
+#    
+#    # create system folder
+#    if [ ! -d "/system" ]; then 
+#        mkdir -p /system/lib
+#    fi
+#
+#    # create application folder
+#    if [ ! -d "/application" ]; then
+#        mkdir -p /application
+#	mount -t squashfs -o loop /mnt/mmcblk0/app.sqfs /application
+#    fi
+#
+#    # create apps folder
+#    if [ ! -d "/apps" ]; then
+#        mkdir -p /apps/lib
+#        mkdir -p /apps/include
+#    fi
+#fi

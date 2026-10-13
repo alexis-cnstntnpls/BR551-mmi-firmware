@@ -1,0 +1,64 @@
+#!/bin/sh
+sprtlib_mtdid=`cat /proc/mtd | grep sprtlib | sed "s/:.*//" | sed "s/mtd//"`
+spsdk_mtdid=`cat /proc/mtd | grep spsdk | sed "s/:.*//" | sed "s/mtd//"`
+spapp_mtdid=`cat /proc/mtd | grep spapp | sed "s/:.*//" | sed "s/mtd//"`
+#echo $sprtlib_mtdid
+#echo $spsdk_mtdid
+#echo $spapp_mtdid
+
+if [ ! -d "$1" ]; then
+  echo ""
+  echo "usage :"
+  echo "      usbsdmnt /mnt/sda1      (usb device mount at /mnt/sda1)"
+  echo "      usbsdmnt /mnt/mmcblk0p1 (usb device mount at /mnt/mmcblk0p1)"
+  echo ""
+  exit 127
+fi
+
+if [ $sprtlib_mtdid ] && [ $spsdk_mtdid ] && [ $spapp_mtdid ]; then
+
+  # kill process
+  kill -9 `pidof touchcalibration` 
+  kill -9 `pidof as_server`        
+  kill -9 `pidof accessory_server` 
+  kill -9 `pidof fileplayer_server`
+  kill -9 `pidof bluetooth_server`
+  kill -9 `pidof fmw_server`    
+  kill -9 `pidof disp_server`   
+  kill -9 `pidof pfc_server`                        
+  kill -9 `pidof logcat`                            
+  kill -9 `pidof mdnsd`                             
+  kill -9 `pidof servicemanager`                    
+  kill -9 `pidof Launcher`                          
+                                                    
+  # umount                                          
+  umount /libsprt                                   
+  umount /usr/local                                 
+  umount /application                               
+                                                    
+  # rebuild env                                     
+  mkdir -p /libsprt                                 
+  mount -t squashfs -o loop $1/sprtlib.sqfs /libsprt
+  #mv /lib /lib_old                                 
+  ln -s /libsprt/usr/lib/ /usr/                     
+  ln -s /libsprt/lib/ /lib                          
+  mkdir -p /usr/local                               
+  mount -t squashfs -o loop $1/spsdk.sqfs /usr/local
+  mkdir -p /system/lib                              
+  mkdir -p /application                             
+  mount -t squashfs -o loop $1/app.sqfs /application
+  mkdir -p /apps/lib               
+  mkdir -p /apps/include           
+                                   
+  # rebuild framework (sdk go)
+  #start sdk & export Env variable.                                         
+  cd /usr/local/                                                        
+  source ./sdk_go.sh                                                    
+                    
+  #start application
+  cd /application 
+  source ./app_go.sh
+             
+  cd ..                                                            
+# exit 0
+fi

@@ -1,0 +1,72 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!-- This file is for CarLink config -->
+<property>
+	<Feature>
+		<ConnectAllowType value="3"/>       <!-- Bit filed, the bit 0 is usb,the bit 1 is wireless(P2P),every bit value 0 means not support,1 is support  -->
+		<IsAutoConn value="true"/>
+		<DayNightMode value="1"/>
+		<SdkLogLevel value="1"/>            <!-- "0-ERROR", "1-WARN", "2-INFO", "3-DEBUG", "4-TRACE" -->
+	</Feature>
+	<CarInfo>
+		<SystemOS value="linux"/>
+		<Manufacturer value="headunit"/>
+		<Model value="carlink.83xx"/>
+		<Release value="1.0.0"/>
+	</CarInfo>
+	<CarDisplayCapibility>                            <!-- The HU display capability -->
+		<Codec value="1" />                           <!-- 1 is for h264,only support h264 now -->
+		<Gop value="-1" />                            <!-- The frame count between two I frame -->
+		<Bitrate value="5000000" />                   <!-- The video stream bitrate,support 1 ~ 10 M -->
+		<MinBitrate value="3000000" />
+		<MaxBitrate value="10000000" />
+		<Profile value="0" />                         <!-- The h264 profile -->
+		<Level value="0" />                           <!-- The h264 level -->
+		<WidthPhysical value="157" />
+		<HeightPhysical value="88" />
+		<WidthPixel value="1024" />
+		<HeightPixel value="600" />
+		<Fps value="30" />                            <!-- support 30 and 60 fps -->
+		<Dpi value="240" />					          <!-- support 160 and 240 dpi -->
+		<SurfaceX value="0" />                        <!-- coordinate of the upper left corner of the projecttion display area: X -->
+		<SurfaceY value="0" />                        <!-- coordinate of the upper left corner of the projecttion display area: Y -->
+		<SurfaceWidth value="1024" />                 <!-- width of the projecttion display area -->
+		<SurfaceHeight value="600" />                 <!-- height of the projecttion display area -->
+	</CarDisplayCapibility>
+	<CarFeatureInfo>                                  <!-- The HU feature info -->
+		<CarModel value="BaoJun530" />
+		<Manufacturer value="qcom" />
+		<Model value="msm8937_32go" />
+		<OSInfo value="0.0.1" />                      <!-- The HU OS info -->
+		<CPUInfo value="armeabi-v7a" />
+		<RamInfo value="2.94GB" />                    <!-- The HU RAM size -->
+		<RomInfo value="14.36GB" />                   <!-- The HU ROM size -->
+		<ScreenSize value="12.82" />                  <!-- The screen size -->
+		<ScreenMetrics value="1024X600" />
+		<LinuxKernel value="4.9" />
+		<BTChip value="ivt1423" />                    <!-- The BT Chip model -->
+		<WifiChip value="RTL8188" />                  <!-- The Wifi Chip model -->
+	</CarFeatureInfo>
+	<SecurityFilePath value="/media/flash/userdata/carlink/" /> <!-- The CarLink security file save path -->
+	<FrontEndInfo>                                    <!-- The Voice wake-up car machine information -->
+		<Voice>                                       <!-- Voice info -->
+			<IsSupport value="0"/>                    <!-- VoiceWakeup feature :1 is support,0 is not support-->
+			<WakeWord value="小艺小艺" />         <!-- Phonological wake-up word -->
+			<VendorName value="DSpotter" />           <!-- The name of the vendor that the voice front end processes: AISpeech CYBERON TXZ -->
+			<Version value="2.2.6" />                 <!-- The version number of the vendor that the voice front end processes -->
+			<WakeupEnginePath value="/usr/local/lib/libvoicewakeupenginecyberon.so"/>     <!-- Path of voicewakeupenginelib  default use Cyberon engine-->
+		</Voice>
+		<CentralControl>                              <!-- Information of vehicle central control -->
+			<VendorName value="XX" />                 <!-- Name of vehicle central control supply -->
+			<Version value="xxx" />                   <!-- Version number of on-board central control -->
+		</CentralControl>
+		<Car>                                         <!-- Information about the car -->
+			<Manufacturer value="XX" />               <!-- The name of the car manufacturer -->
+			<Date value="2020-11-11" />               <!-- The year the car was produced, "yyyy-mm-dd" -->
+			<Brand value="XX" />                      <!-- Brand of car -->
+			<MicNumber value="2" />                   <!-- Number of microphones to pick up sounds -->
+			<SpeakerNumber value="8" />               <!-- Number of speakers -->
+		</Car>
+	</FrontEndInfo>
+	<UserConfigPath value="/usr/local/etc/carlink" /> <!-- The user config path(voice wakeup config file must place on this folder) -->
+</property>
+

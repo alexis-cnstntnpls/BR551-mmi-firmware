@@ -1,0 +1,51 @@
+<?xml version="1.2" encoding="UTF-8"?>
+<!--
+WebLink config
+-->
+<property>
+	<DeviceIdentity value="true">
+		<SystemID value="0000000000000002"/>
+		<EnglishDispalyName value="Sunplus Weblink"/>
+		<Manufacturer value="Sunplus"/>
+		<Model value="SPHE83XX"/>
+		<CountryCodes value="CACNIDMYPHSGTHUSVN"/>
+		<SerialNumber value="Headunit:1805110001"/>
+		<OS value="Linux"/>
+		<OSVersion value="4.9"/>
+		<ApplicationName value="WebLink Client App"/>
+		<ApplicationVendor value="com.sunplus"/>
+		<ApplicationVersion value="2.0"/>
+	</DeviceIdentity>
+	<OTA value="false">
+		<Devinfo>
+			<Name value="Xugang_HU_8368xu_0"/>
+			<Model value="Test"/>
+			<Manufacturer value="Xugang"/>
+			<Country value="CN"/>
+			<Serial value="C23xHhn"/>
+		</Devinfo>
+		<Devsys>
+			<OsName value="Linux"/>
+			<OsVersion value="8368u_1.0"/>
+		</Devsys>
+		<CloudProvisioning>
+			<Strategy value="0"/>
+			<RootCA value="/application/config/ota/cert/XugangThingCertificates/Xugang_HU_8368xu_0/AmazonRootCA1.pem"/>
+			<PrivateKey value="/application/config/ota/cert/XugangThingCertificates/Xugang_HU_8368xu_0/adc3c4179bcd1fe6aa16c56188146e1c7ca764e25612081e471e8fe52e90b480-private.pem.key"/>
+			<Certificate value="/application/config/ota/cert/XugangThingCertificates/Xugang_HU_8368xu_0/adc3c4179bcd1fe6aa16c56188146e1c7ca764e25612081e471e8fe52e90b480-certificate.pem.crt"/>
+		</CloudProvisioning>
+		<CloudEndpoint>
+			<Endpoint value="ardagql43fz2q-ats.iot.us-east-1.amazonaws.com"/>
+			<Port value="8883"/>
+			<LinkedEntity value=""/>
+		</CloudEndpoint>
+		<Download>
+			<LocalPath value="/media/flash/userdata/"/>
+			<HttpPort value="443"/>
+		</Download>
+	</OTA>
+	<Wireless value="false">
+		<ClientAP value="true"/>
+		<HostAP value="true"/>
+	</Wireless>
+</property>

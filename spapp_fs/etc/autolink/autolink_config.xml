@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+    <ModuleInfo>
+        <ModuleName                                             value="Autolink"/>
+        <MajorVersion                                           value="3"/>
+        <MinorVersion                                           value="2"/>
+        <ReleaseVersion                                         value="0"/>
+    </ModuleInfo>
+    <Transport>
+        <SupportUsbAoa                                          value="true"/>
+        <SupportWifiP2p                                         value="true"/>
+    </Transport>
+    <Connection>
+        <ProbeTimeout                                           value="6000"/>
+    </Connection>
+    <VehicleInfo>
+        <Make                                                   value="ICAR"/>
+        <Model                                                  value="ICAR"/>
+        <Year                                                   value="2016"/>
+    </VehicleInfo>
+    <HeadunitInfo>
+        <Make                                                   value="ICAR"/>
+        <Model                                                  value="ICAR"/>
+        <SwBuild                                                value="ICAR"/>
+        <SwVersion                                              value="0.1"/>
+        <Series                                                 value="headunit-autolink-series-01"/>
+        <Screen>
+            <Resolution>
+                <Width                                          value="1024"/>
+                <Height                                         value="600"/>
+            </Resolution>
+            <Size                                               value="7"/>       <!-- unit: inch-->
+            <TouchType                                          value="2"/>       <!-- capacitive:1 resistive:2-->
+        </Screen>
+    </HeadunitInfo>
+    <Video>
+        <Display>
+            <Left                                               value="0"/>
+            <Top                                                value="0"/>
+            <Right                                              value="1024"/>
+            <Bottom                                             value="600"/>
+            <Rotation                                           value="0"/>       <!-- normal:0 anti-clockwise-90:90 flip:180 clockwise-90:270-->
+        </Display>
+        <FrameRate                                              value="30"/>
+        <SupportH264                                            value="true"/>
+        <SupportMp4                                             value="false"/>   <!-- not supported so far-->
+    </Video>
+    <Touch>
+        <HidSetup>
+            <SupportMouse                                       value="false"/>
+            <SupportTouchScreen                                 value="true"/>
+            <SupportKey                                         value="true"/>
+        </HidSetup>
+    </Touch>
+</property>
+

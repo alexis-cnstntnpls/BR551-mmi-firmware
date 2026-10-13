@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+    <moduleInfo>
+        <majorVersion value="1" />
+        <minorVersion value="0" />
+        <releaseVersion value="0" />
+    </moduleInfo>
+    <speakerDelay>
+        <frontLeft value="0.0" /> <!--a float value, range is 0.0 - 20.0 ms-->
+        <frontRight value="0.0" /> <!--a float value, range is 0.0 - 20.0 ms-->
+        <surroundLeft value="0.0" /> <!--a float value, range is 0.0 - 20.0 ms-->
+        <surroundRight value="0.0" /> <!--a float value, range is 0.0 - 20.0 ms-->
+        <center value="0.0" /> <!--a float value, range is 0.0 - 20.0 ms-->
+        <subwoofer value="0.0" /> <!--a float value, range is 0.0 - 20.0 ms-->
+    </speakerDelay>
+    <extEq>
+        <link>
+            <!--eBiquadType nFc sGain sQ eMethod eSlope ePhase-->
+            <band0 value="6 0 0.0 0.0 0 0 0" />
+            <band1 value="6 0 0.0 0.0 0 0 0" />
+            <band2 value="6 0 0.0 0.0 0 0 0" />
+            <band3 value="6 0 0.0 0.0 0 0 0" />
+            <band4 value="6 0 0.0 0.0 0 0 0" />
+            <band5 value="6 0 0.0 0.0 0 0 0" />
+            <band6 value="6 0 0.0 0.0 0 0 0" />
+            <band7 value="6 0 0.0 0.0 0 0 0" />
+            <band8 value="6 0 0.0 0.0 0 0 0" />
+            <band9 value="6 0 0.0 0.0 0 0 0" />
+            <band10 value="6 0 0.0 0.0 0 0 0" />
+            <band11 value="6 0 0.0 0.0 0 0 0" />
+            <band12 value="6 0 0.0 0.0 0 0 0" />
+            <band13 value="6 0 0.0 0.0 0 0 0" />
+            <band14 value="6 0 0.0 0.0 0 0 0" />
+            <band15 value="6 0 0.0 0.0 0 0 0" />
+            <band16 value="6 0 0.0 0.0 0 0 0" />
+            <band17 value="0 0 0.0 0.0 0 1 0" />
+            <band18 value="6 0 0.0 0.0 0 0 0" />
+            <band19 value="6 0 0.0 0.0 0 0 0" />
+        </link>
+        <frontLeft>
+            <!--eBiquadType nFc sGain sQ eMethod eSlope ePhase-->
+            <band0 value="6 0 0.0 0.0 0 0 0" />
+            <band1 value="6 0 0.0 0.0 0 0 0" />
+            <band2 value="6 0 0.0 0.0 0 0 0" />
+            <band3 value="6 0 0.0 0.0 0 0 0" />
+            <band4 value="6 0 0.0 0.0 0 0 0" />
+            <band5 value="6 0 0.0 0.0 0 0 0" />
+            <band6 value="6 0 0.0 0.0 0 0 0" />
+            <band7 value="6 0 0.0 0.0 0 0 0" />
+            <band8 value="6 0 0.0 0.0 0 0 0" />
+            <band9 value="6 0 0.0 0.0 0 0 0" />
+            <band10 value="6 0 0.0 0.0 0 0 0" />
+            <band11 value="6 0 0.0 0.0 0 0 0" />
+            <band12 value="6 0 0.0 0.0 0 0 0" />
+            <band13 value="6 0 0.0 0.0 0 0 0" />
+            <band14 value="6 0 0.0 0.0 0 0 0" />
+            <band15 value="6 0 0.0 0.0 0 0 0" />
+            <band16 value="6 0 0.0 0.0 0 0 0" />
+            <band17 value="0 0 0.0 0.0 0 1 0" />
+            <band18 value="6 0 0.0 0.0 0 0 0" />
+            <band19 value="6 0 0.0 0.0 0 0 0" />
+        </frontLeft>
+        <frontRight>
+            <!--eBiquadType nFc sGain sQ eMethod eSlope ePhase-->
+            <band0 value="6 0 0.0 0.0 0 0 0" />
+            <band1 value="6 0 0.0 0.0 0 0 0" />
+            <band2 value="6 0 0.0 0.0 0 0 0" />
+            <band3 value="6 0 0.0 0.0 0 0 0" />
+            <band4 value="6 0 0.0 0.0 0 0 0" />
+            <band5 value="6 0 0.0 0.0 0 0 0" />
+            <band6 value="6 0 0.0 0.0 0 0 0" />
+            <band7 value="6 0 0.0 0.0 0 0 0" />
+            <band8 value="6 0 0.0 0.0 0 0 0" />
+            <band9 value="6 0 0.0 0.0 0 0 0" />
+            <band10 value="6 0 0.0 0.0 0 0 0" />
+            <band11 value="6 0 0.0 0.0 0 0 0" />
+            <band12 value="6 0 0.0 0.0 0 0 0" />
+            <band13 value="6 0 0.0 0.0 0 0 0" />
+            <band14 value="6 0 0.0 0.0 0 0 0" />
+            <band15 value="6 0 0.0 0.0 0 0 0" />
+            <band16 value="6 0 0.0 0.0 0 0 0" />
+            <band17 value="0 0 0.0 0.0 0 1 0" />
+            <band18 value="6 0 0.0 0.0 0 0 0" />
+            <band19 value="6 0 0.0 0.0 0 0 0" />
+        </frontRight>
+        <surroundLeft>
+            <!--eBiquadType nFc sGain sQ eMethod eSlope ePhase-->
+            <band0 value="6 0 0.0 0.0 0 0 0" />
+            <band1 value="6 0 0.0 0.0 0 0 0" />
+            <band2 value="6 0 0.0 0.0 0 0 0" />
+            <band3 value="6 0 0.0 0.0 0 0 0" />
+            <band4 value="6 0 0.0 0.0 0 0 0" />
+            <band5 value="6 0 0.0 0.0 0 0 0" />
+            <band6 value="6 0 0.0 0.0 0 0 0" />
+            <band7 value="6 0 0.0 0.0 0 0 0" />
+            <band8 value="6 0 0.0 0.0 0 0 0" />
+            <band9 value="6 0 0.0 0.0 0 0 0" />
+            <band10 value="6 0 0.0 0.0 0 0 0" />
+            <band11 value="6 0 0.0 0.0 0 0 0" />
+            <band12 value="6 0 0.0 0.0 0 0 0" />
+            <band13 value="6 0 0.0 0.0 0 0 0" />
+            <band14 value="6 0 0.0 0.0 0 0 0" />
+            <band15 value="6 0 0.0 0.0 0 0 0" />
+            <band16 value="6 0 0.0 0.0 0 0 0" />
+            <band17 value="0 0 0.0 0.0 0 1 0" />
+            <band18 value="6 0 0.0 0.0 0 0 0" />
+            <band19 value="6 0 0.0 0.0 0 0 0" />
+        </surroundLeft>
+        <surroundRight>
+            <!--eBiquadType nFc sGain sQ eMethod eSlope ePhase-->
+            <band0 value="6 0 0.0 0.0 0 0 0" />
+            <band1 value="6 0 0.0 0.0 0 0 0" />
+            <band2 value="6 0 0.0 0.0 0 0 0" />
+            <band3 value="6 0 0.0 0.0 0 0 0" />
+            <band4 value="6 0 0.0 0.0 0 0 0" />
+            <band5 value="6 0 0.0 0.0 0 0 0" />
+            <band6 value="6 0 0.0 0.0 0 0 0" />
+            <band7 value="6 0 0.0 0.0 0 0 0" />
+            <band8 value="6 0 0.0 0.0 0 0 0" />
+            <band9 value="6 0 0.0 0.0 0 0 0" />
+            <band10 value="6 0 0.0 0.0 0 0 0" />
+            <band11 value="6 0 0.0 0.0 0 0 0" />
+            <band12 value="6 0 0.0 0.0 0 0 0" />
+            <band13 value="6 0 0.0 0.0 0 0 0" />
+            <band14 value="6 0 0.0 0.0 0 0 0" />
+            <band15 value="6 0 0.0 0.0 0 0 0" />
+            <band16 value="6 0 0.0 0.0 0 0 0" />
+            <band17 value="0 0 0.0 0.0 0 1 0" />
+            <band18 value="6 0 0.0 0.0 0 0 0" />
+            <band19 value="6 0 0.0 0.0 0 0 0" />
+        </surroundRight>
+        <subwoofer>
+            <!--eBiquadType nFc sGain sQ eMethod eSlope ePhase-->
+            <band0 value="6 0 0.0 0.0 0 0 0" />
+            <band1 value="6 0 0.0 0.0 0 0 0" />
+            <band2 value="6 0 0.0 0.0 0 0 0" />
+            <band3 value="6 0 0.0 0.0 0 0 0" />
+            <band4 value="6 0 0.0 0.0 0 0 0" />
+            <band5 value="6 0 0.0 0.0 0 0 0" />
+            <band6 value="6 0 0.0 0.0 0 0 0" />
+            <band7 value="6 0 0.0 0.0 0 0 0" />
+            <band8 value="6 0 0.0 0.0 0 0 0" />
+            <band9 value="6 0 0.0 0.0 0 0 0" />
+            <band10 value="6 0 0.0 0.0 0 0 0" />
+            <band11 value="6 0 0.0 0.0 0 0 0" />
+            <band12 value="6 0 0.0 0.0 0 0 0" />
+            <band13 value="6 0 0.0 0.0 0 0 0" />
+            <band14 value="6 0 0.0 0.0 0 0 0" />
+            <band15 value="6 0 0.0 0.0 0 0 0" />
+            <band16 value="6 0 0.0 0.0 0 0 0" />
+            <band17 value="0 0 0.0 0.0 0 1 0" />
+            <band18 value="6 0 0.0 0.0 0 0 0" />
+            <band19 value="6 0 0.0 0.0 0 0 0" />
+        </subwoofer>
+    </extEq>
+</property>

@@ -1,0 +1,17 @@
+prefix=/home/l.wang/prebuilt_1118/prebuiltsrc/../prebuilt/common/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+system_bus_default_address=unix:path=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/dbus-1.8.18/_install//usr/local/var/run/dbus/system_bus_socket
+sysconfdir=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/dbus-1.8.18/_install//usr/local/etc
+session_bus_services_dir=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/dbus-1.8.18/_install//usr/local/share/dbus-1/services
+system_bus_services_dir=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/dbus-1.8.18/_install//usr/local/share/dbus-1/system-services
+interfaces_dir=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/dbus-1.8.18/_install//usr/local/share/dbus-1/interfaces
+daemondir=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/dbus-1.8.18/_install//usr/local/bin
+
+Name: dbus
+Description: Free desktop message bus
+Version: 1.8.18
+Libs: -L${libdir} -ldbus-1
+Libs.private:   
+Cflags: -I${includedir}/dbus-1.0 -I${libdir}/dbus-1.0/include 

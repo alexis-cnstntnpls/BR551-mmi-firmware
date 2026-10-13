@@ -1,0 +1,9 @@
+ro.debuggable=1
+
+ro.debug.by.net=0
+
+#ENABLE_RESOURCEMANAGER
+ro.enable.resourcemanager=0
+
+ro.main.storage=nand
+ro.platform.name=gemini_disc

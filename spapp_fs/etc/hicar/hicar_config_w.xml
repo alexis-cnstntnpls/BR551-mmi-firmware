@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file is for huawei HiCar config -->
+<property>
+  <CarConnectInfo>                        <!-- The car connect information -->
+      <ModelId value="00040900"/>         <!-- The model id given by huawei, 000414 indicate the brand ,01 indicate the model -->
+      <ConnectAllowType value="3"/>       <!-- Bit filed, the bit 0 is wireless ,the bit 1 is USB,the bit 2 is scan,every bit value 0 means not support,1 is support  -->
+  </CarConnectInfo>
+  <CarDeviceInfo>                         <!-- The Car device info -->
+      <CarBrand value="HiCar"/>
+      <SterringWheelPos value="0"/>       <!-- 0 is left,1 is right -->
+      <DeviceType value="4"/>             <!-- genuine use the value of 4 -->
+      <LogFilePath value="/media/flash/nvm"/> <!-- The HiCar SDK log file save path -->
+  </CarDeviceInfo>
+  <CarDisplayCapibility>                  <!-- The HU display capability-->
+      <Codec value="1"/>                  <!-- 1 is for h264,only support h264 now-->
+      <Fps value="60"/>                   <!-- support 30 and 60 fps -->
+      <Gop value="-1"/>                   <!-- The frame count between two I frame-->
+      <Bitrate value="5000000"/>                <!-- The video stream bitrate,support 1 ~ 10 M -->
+      <MinBitrate value="3000000"/>
+      <MaxBitrate value="10000000"/>
+      <Dpi value="0"/>
+      <Profile value="0"/>                <!-- The h264 profile -->
+      <Level value="0"/>                  <!-- The h264 level -->
+      <WidthPhysical value="260"/>
+      <HeightPhysical value="88"/>
+      <WidthPixel value="1280"/>
+      <HeightPixel value="480"/>
+  </CarDisplayCapibility>
+  <CarFeatureInfo>                        <!-- The HU feature info-->
+      <CarModel value="Car"/>
+      <Manufacturer value="qcom"/>
+      <Model value="msm8937_32go"/>
+      <OSInfo value="0.0.1"/>             <!-- The HU OS info -->
+      <CPUInfo value="armeabi-v7a"/>
+      <RamInfo value="2.94GB"/>           <!-- The HU RAM size -->
+      <RomInfo value="14.36GB"/>          <!-- The HU ROM size -->
+      <ScreenSize value="12.82"/>         <!-- The screen size -->
+      <ScreenMetrics value="1280X480"/>
+      <LinuxKernel value="4.9"/>
+      <BTChip value="ivt1423"/>           <!-- The BT Chip model -->
+      <WifiChip value="RTL8188"/>         <!-- The Wifi Chip model-->
+  </CarFeatureInfo>
+  <SecurityFilePath value="/media/flash/nvm"/> <!-- The HiCar security file save path -->
+  <FrontEndInfo>                          <!-- The Voice wake-up car machine information -->
+    <Voice>                               <!-- Voice info -->
+        <WakeWord value="小艺小艺"/>       <!-- Phonological wake-up word -->
+        <VendorName value="DSpotter"/>    <!-- The name of the vendor that the voice front end processes -->
+        <Version value="2.2.6"/>          <!-- The version number of the vendor that the voice front end processes -->
+        <WakeupEngine value="AI_SPEECH"/>     <!-- support AI_SPEECH and CYBERON and TXZ  -->
+    </Voice>
+    <CentralControl>                       <!-- Information of vehicle central control -->
+        <VendorName value="XX"/>           <!-- Name of vehicle central control supply -->
+        <Version value="xxx"/>             <!-- Version number of on-board central control -->
+    </CentralControl>
+    <Car>                                  <!-- Information about the car -->
+        <Manufacturer value="XX"/>         <!-- The name of the car manufacturer -->
+        <Date value="2020-11-11"/>         <!-- The year the car was produced, "yyyy-mm-dd" -->
+        <Brand value="XX"/>                <!-- Brand of car -->
+        <MicNumber value="2"/>             <!-- Number of microphones to pick up sounds -->
+        <SpeakerNumber value="8"/>         <!-- Number of speakers -->
+    </Car>
+  </FrontEndInfo>
+  <FeatureDisableState>
+      <DisableAudio value="0"/>         <!-- The HU audio disable state :1 is disable,0 is not disable-->
+      <DisableCamera value="1"/>         <!-- The HU camera disable state :1 is disable,0 is not disable-->
+      <DisableGPS value="1"/>         <!-- The HU GPS disable state :1 is disable,0 is not disable-->
+  </FeatureDisableState>
+  <UserConfigPath value="/usr/local/etc/hicar"/> <!-- The user config path(voice wakeup config file must place on this folder) -->
+</property>
+

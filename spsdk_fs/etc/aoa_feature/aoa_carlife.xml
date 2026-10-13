@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+	<AoaFeature>
+		<ManuFacturer value="Baidu"/>
+		<Model value="CarLife"/>
+		<Description value="Baidu CarLife"/>
+		<Version value="1.0.0"/>
+		<Url value="http://carlife.baidu.com/"/>
+		<Serial value="0720SerialNo."/>
+		<Mode value="1"/>
+		<Name value="aoa-carlife%d"/>
+		<PPS value="0"/>
+	</AoaFeature>
+</property>

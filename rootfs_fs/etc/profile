@@ -1,0 +1,130 @@
+#!/bin/sh
+
+echo "/etc/profile in"
+
+# export env variable
+export LD_LIBRARY_PATH="/lib:/usr/lib:/usr/local/lib:/system/lib:/system/qt/lib:/application/lib:/apps/lib"
+export PATH=$PATH:/usr/local/bin:/application/bin:/apps/bin
+export LD_HWCAP_MASK=0x00000000
+export HOME=/root
+export PS1='\u@\h:\w\$ '
+
+HOSTNAME=Gemini
+
+hostname $HOSTNAME
+
+DEBUG_BY_NET=0
+if [ -d /debug_by_net ]; then
+	DEBUG_BY_NET=1
+	echo 'NAND is not used, partition data are accessed through network ...'
+fi
+export DEBUG_BY_NET
+
+#sprtlib_mtdid=`cat /proc/mtd | grep sprtlib | sed "s/:.*//" | sed "s/mtd//"`
+spsdk_mtdid=`cat /proc/mtd | grep spsdk | sed "s/:.*//" | sed "s/mtd//"`
+spapp_mtdid=`cat /proc/mtd | grep spapp | sed "s/:.*//" | sed "s/mtd//"`
+nvm_mtdid=`cat /proc/mtd | grep nvm | sed "s/:.*//" | sed "s/mtd//"`
+
+if [ "$DEBUG_BY_NET" -eq 0 ]; then
+	if [ $spsdk_mtdid ] ; then
+		MAIN_STORAGE_EMMC=0
+	else
+		MAIN_STORAGE_EMMC=1
+		# p3=env, p4=env_redund
+		strings /dev/mmcblk0p3 | grep _mmcpart > /tmp/mmcids.txt
+		if ! grep -q spsdk_mmcpart /tmp/mmcids.txt ;then
+			strings /dev/mmcblk0p4 | grep _mmcpart > /tmp/mmcids.txt
+		fi
+		spsdk_mmcid=`grep spsdk_mmcpart /tmp/mmcids.txt | sed 's/.*=//'`
+		spapp_mmcid=`grep spapp_mmcpart /tmp/mmcids.txt | sed 's/.*=//'`
+		nvm_mmcid=`grep nvm_mmcpart /tmp/mmcids.txt | sed 's/.*=//'`
+		if [ "$spsdk_mmcid" = "" ] ;then
+			echo "Can't find spsdk partition ID!"
+		fi
+	fi
+fi
+export MAIN_STORAGE_EMMC
+
+#if [ $sprtlib_mtdid ] && [ $spsdk_mtdid ] && [ $spapp_mtdid ] && [ $nvm_mtdid ] || [ "$DEBUG_BY_NET" -eq 1 ] ; then
+if [ $spsdk_mtdid ] && [ $spapp_mtdid ] && [ $nvm_mtdid ] || [ "$DEBUG_BY_NET" -eq 1 ] || [ "$MAIN_STORAGE_EMMC" -eq 1 ] ; then
+	mkdir -p /tmp/sp
+	cp -rfa /etc /tmp/sp/
+	cp -rfa /root /tmp/sp/
+	mount /tmp/sp/etc /etc
+	mount /tmp/sp/root /root
+
+	mkdir -p /tmp/sp/log
+	# mkdir -p /tmp/sp/libsprt
+	mkdir -p /tmp/sp/system/lib
+
+	if [ "$DEBUG_BY_NET" -eq 1 ]; then
+		echo "Following image have been expanded on NFS already"
+		echo "  spsdk -> /usr/local"
+		echo "  spapp -> /application"
+
+		ln -s /home        /tmp/sp/home
+		ln -s /mnt         /tmp/sp/mnt
+		ln -s /var         /tmp/sp/var
+		ln -s /application /tmp/sp/application
+
+		mkdir -p /media/flash/nvm && ls -lF /media/flash/nvm
+
+		# Let /media/flash/nvm in USB storage
+		# DIR_NVM=`find /mnt -name ISPBOOOT.BIN | head -n 1 | xargs dirname`
+		# DIR_NVM=${DIR_NVM}/nvm
+		# mkdir -p ${DIR_NVM}
+		# mkdir -p /media/flash && ln -s ${DIR_NVM} /media/flash/nvm
+
+		mkdir -p /tmp/sp/modules/$(uname -r)
+	else
+		mkdir -p /tmp/sp/home
+		mkdir -p /tmp/sp/mnt
+		mkdir -p /tmp/sp/var
+		mkdir -p /tmp/sp/usr/local
+		mkdir -p /tmp/sp/application
+		mkdir -p /tmp/sp/media/
+		mkdir -p /tmp/sp/media/flash/nvm
+		mkdir -p /tmp/sp/modules/$(uname -r)
+
+		# echo 'enable eth0 ...'
+		# while true; do
+		# 	ifconfig -a eth0
+		# 	if [ "$?" -eq 0 ]; then
+		# 		break;
+		# 	else
+		# 		sleep 1
+		# 	fi
+		# done
+		# ifconfig eth0 192.168.0.88 && sleep 2 && ifconfig eth0 && ping -c 2 192.168.0.99
+
+		if [ "$MAIN_STORAGE_EMMC" -eq 1 ]; then
+			mount -t squashfs /dev/mmcblk0p$spsdk_mmcid /usr/local
+			mount -t squashfs /dev/mmcblk0p$spapp_mmcid /application
+
+			mount -t ext4 /dev/mmcblk0p$nvm_mmcid /media/flash/nvm
+			if [ "$?" -ne 0 ]; then
+				mkfs.ext2 /dev/mmcblk0p$nvm_mmcid
+				mount -t ext4 /dev/mmcblk0p$nvm_mmcid /media/flash/nvm
+			fi
+		else
+			# mount -t squashfs /dev/blockrom$sprtlib_mtdid /libsprt
+			mount -t squashfs /dev/blockrom$spsdk_mtdid /usr/local
+			# mount -o nolock -t nfs 192.168.0.99:/C/nfs/root4nfs/usr/local /usr/local
+			mount -t squashfs /dev/blockrom$spapp_mtdid /application
+			# mount -o nolock -t nfs 192.168.0.99:/C/nfs/root4nfs/application /application
+			mount -t yaffs2 /dev/mtdblock$nvm_mtdid /media/flash/nvm
+		fi
+	fi
+
+
+	#start sdk & export Env variable.
+	cd /usr/local/
+	source ./sdk_go.sh
+
+	#start application
+	cd /application
+	source ./app_go.sh
+
+	cd ..
+	# exit 0
+fi

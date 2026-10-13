@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+    <moduleInfo>
+        <majorVersion value="1" />
+        <minorVersion value="0" />
+        <releaseVersion value="0" />
+    </moduleInfo>
+    <setting>
+        <dirs>
+            <default value="/usr/local/etc/as_server/" />
+            <customize value="/media/flash/nvm/as_server/" />
+        </dirs>
+        <volumeStrategy value="1" /> <!--1:StreamTypeStrategy 2:TrackNameStrategy-->
+        <syncDelay value="3000" /><!--Time unit: ms.When the audio parameter is modified,
+                                      it will be synchronized to the file after a delay.
+                                      If there is parameter modification within the delay time,
+                                      the file synchronization operation will be delayed for a period of time based on the last modification-->
+    </setting>
+</property>

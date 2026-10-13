@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+    <ModuleInfo>
+        <ModuleName                                             value="Autolink"/>
+        <MajorVersion                                           value="3"/>
+        <MinorVersion                                           value="2"/>
+        <ReleaseVersion                                         value="0"/>
+    </ModuleInfo>
+    <Transport>
+        <SupportUsbAoa                                          value="true"/>
+        <SupportWifiP2p                                         value="false"/>
+    </Transport>
+    <Connection>
+        <ProbeTimeout                                           value="6000"/>
+    </Connection>
+    <VehicleInfo>
+        <Make                                                   value="Rolls-Royce"/>
+        <Model                                                  value="Phantom"/>
+        <Year                                                   value="2016"/>
+    </VehicleInfo>
+    <HeadunitInfo>
+        <Make                                                   value="XXCompany"/>
+        <Model                                                  value="XXModel"/>
+        <SwBuild                                                value="XXOS"/>
+        <SwVersion                                              value="0.1"/>
+        <Series                                                 value="headunit-autolink-series-01"/>
+        <Screen>
+            <Resolution>
+                <Width                                          value="800"/>
+                <Height                                         value="480"/>
+            </Resolution>
+            <Size                                               value="7"/>       <!-- unit: inch-->
+            <TouchType                                          value="2"/>       <!-- capacitive:1 resistive:2-->
+        </Screen>
+    </HeadunitInfo>
+    <Video>
+        <Display>
+            <Left                                               value="0"/>
+            <Top                                                value="0"/>
+            <Right                                              value="800"/>
+            <Bottom                                             value="480"/>
+			<Rotation                                           value="0"/>       <!-- normal:0 anti-clockwise-90:90 flip:180 clockwise-90:270-->
+        </Display>
+        <Resolution>
+            <Width                                              value="1280"/>    <!--800*480/1280*720/1920*1080-->
+            <Height                                             value="720"/>
+        </Resolution>
+        <FrameRate                                              value="30"/>
+        <SupportH264                                            value="true"/>
+        <SupportMp4                                             value="false"/>   <!-- not supported so far-->
+    </Video>
+    <Touch>
+        <HidSetup>
+            <SupportMouse                                       value="false"/>
+            <SupportTouchScreen                                 value="true"/>
+            <SupportKey                                         value="true"/>
+        </HidSetup>
+    </Touch>
+</property>
+

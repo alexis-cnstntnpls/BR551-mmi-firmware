@@ -1,0 +1,36 @@
+SP_GEMINI_AUTO_FILENAME="gemn_auto.sh"
+
+# $1 is absolute path of usb root
+check_and_run_gemini_auto()
+{
+	if [ -f $1/$SP_GEMINI_AUTO_FILENAME ]; then
+		log_file=$1/log_mdevscr_usb.txt
+		echo "============================================" > $log_file
+		tmp_date=`date +%H:%M:%S`
+		echo "[$tmp_date] usb root=$1" >> $log_file
+
+		echo "run $1/$SP_GEMINI_AUTO_FILENAME" >> $log_file
+		$1/$SP_GEMINI_AUTO_FILENAME
+	else
+		echo "no $1/$SP_GEMINI_AUTO_FILENAME" >> $log_file
+	fi
+}
+
+# start here
+# usb disk is plugged
+if [ ! -z $DEVTYPE ] && [ $DEVTYPE = "partition" ] && [ $ACTION = "add" ]; then
+	# mount flow is handled by upper layer program, so wait for it here
+	while true
+	do
+		USB_ROOT_ABS_PATH=`df | grep sd.* | awk '{print $6}'`
+		if [ -z $USB_ROOT_ABS_PATH ]; then
+			sleep 1
+		else
+			break
+		fi
+	done
+
+	# gemini auto flow
+	check_and_run_gemini_auto $USB_ROOT_ABS_PATH
+fi
+

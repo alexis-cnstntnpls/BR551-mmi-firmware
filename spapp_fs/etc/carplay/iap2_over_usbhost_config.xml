@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+1.Accessory Identify information and the feature supported in the control session(see also in Accessory Interface Specification R28.pdf).
+2.It's highly recommended that not delete the item or item group from this file.Use "true" and "false" to enable or disable the features.
+e.g.,for AppMatchTeamID in line 17,if not support ,please set AppMatchTeamID value to "false" instead of delete the TeamID or the AppMatchTeamID group.
+-->
+<property>
+  <Name value="HeadUnit"/>              <!-- Name must match the accessory's markings and packaging.A blank string is not allowed-->
+  <ModelIdentifier value="HeadUnit-1"/>         <!-- ModelIdentifier must match the accessory's markings and packaging.A blank string is not allowed-->
+  <Manufacturer value="HeadUnit"/>               <!-- Manufacturer must match the accessory's markings and packaging.A blank string is not allowed-->
+  <SerialNumber value="HeadUnit:1805110001"/>    <!-- SerialNumber must match the accessory's markings and packaging.A blank string is not allowed-->
+  <ProductPlanSupport value="true">            <!-- Only for CarPlay after iOS 13,others accessory should be false -->
+    <ProductPlanUUID value="0123ABCD"/>         <!-- The product plan UUID,must match the real CarPlay product plan UUID, 8 hexadecimal numbers-->
+  </ProductPlanSupport>
+  <FirmwareVersion value="1.0.0"/>              <!-- FirmwareVersion must uniquely reflect the current reversion of the accessory's firmware.A blank string is not allowed-->
+  <HardwareVersion value="1.0.0"/>              <!-- HardwareVersion must uniquely reflect the current reversion of the accessory's hardware.A blank string is not allowed-->
+  <PowerProvidingCapability value="2"/>         <!-- 0:none 1:reserved 2:self powered;  This must be "None" if the accessory does not provide power to the Apple device -->
+  <MaxCurrentDrawnFromDevice value="0"/>        <!-- 0mA; This must be 0 if accessory does not draw power from the Apple device  -->
+  <AppMatchTeamID value="false">                <!-- If value is "false",the AppMatchTeamID will be ignored -->
+    <TeamID value="99M534AN8T"/>                <!-- The AppMatchTeamID -->
+  </AppMatchTeamID>
+  <CurrentLanguage value="en"/>                 <!-- en is 639-1 Codes-->
+  <SupportedLanguage value="2">                 <!-- How many languages the product support,at least 1 language should be supported -->
+    <Language1 value="en"/>                     <!-- en is English in 639-1 Codes ,must begin with Language1,and the index must increase in order-->
+    <Language2 value="zh"/>                     <!-- Chinese -->
+  </SupportedLanguage>
+  <Transport>                                   <!-- The transport of accessory,may have 1 or more of following transport type -->
+    <Serial value="false">                      <!-- Optional,if not supported ,please set the value to "false" instead of delete the item group -->
+      <Identifier value="1"/>                   <!-- All the Identifier in the Serial/USBDevice/USBHost/Bluetooth/WirelessCarPlay must be unique -->
+      <Name value="Serial"/>                    <!-- The name can be modified,must not be NULL -->
+      <SupportiAP2 value="true"/>               <!-- If the transport support iAP2 connection, must be true -->
+    </Serial>
+    <USBDevice value="false">                   <!-- Optional,if not supported ,please set the value to "false" instead of delete the item group -->
+      <Identifier value="2"/>                   <!-- All the Identifier in the Serial/USBDevice/USBHost/Bluetooth/WirelessCarPlay must be unique -->
+      <Name value="USBDevice"/>                 <!-- The name can be modified,must not be NULL -->
+      <SupportiAP2 value="true"/>               <!-- If the transport support iAP2 connection, must be true -->
+      <AudioSampleRatecount value="3"/>
+      <AudioSampleRate1 value="6"/>             <!--(0) 8000Hz; (1) 11025Hz; (2) 12000Hz;  (3)16000Hz; (4)22050Hz; (5)24000Hz; (6)32000Hz (7) 44100Hz; (8)48000Hz;
+                                                     at least support 32000Hz, 44100Hz, 48000Hz-->
+      <AudioSampleRate2 value="7"/>
+      <AudioSampleRate3 value="8"/>
+    </USBDevice>
+    <USBHost value="true">                      <!-- Optional,if not supported ,please set the value to "false" instead of delete the item group -->
+      <Identifier value="3"/>                   <!-- All the Identifier in the Serial/USBDevice/USBHost/Bluetooth/WirelessCarPlay must be unique -->
+      <Name value="USBHost"/>                   <!-- The name can be modified,must not be NULL -->
+      <SupportiAP2 value="true"/>               <!-- If the transport support iAP2 connection, must be true -->
+      <CarPlayInterfaceNum value="1"/>          <!-- The accessory's NCM control interface number,here must be 1,its defined by driver-->
+      <SupportsCarPlay value="true"/>
+    </USBHost>
+    <Bluetooth value="true">                   <!-- Optional,if not supported ,please set the value to "false" instead of delete the item group -->
+      <BTTransportCount value="1"/>             <!-- How many Bluetooth transport component currently supported -->
+      <BTTransport1 value="true">               <!-- If supported multiple transport here,must begin with BTTransport1 -->
+        <Identifier value="4"/>                 <!-- All the Identifier in the Serial/USBDevice/USBHost/Bluetooth/WirelessCarPlay must be unique -->
+        <Name value="Bluetooth1"/>              <!-- The name can be modified,must not be NULL -->
+        <SupportiAP2 value="true"/>             <!-- If the transport support iAP2 connection, must be true -->
+      </BTTransport1>
+      <BTTransport2 value="true">
+        <Identifier value="5"/>                 <!-- All the Identifier in the Serial/USBDevice/USBHost/Bluetooth/WirelessCarPlay must be unique -->
+        <Name value="Bluetooth2"/>              <!-- The name can be modified,must not be NULL -->
+        <SupportiAP2 value="true"/>             <!-- If the transport support iAP2 connection, must be true -->
+      </BTTransport2>
+    </Bluetooth>
+    <WirelessCarPlay value="true">             <!-- Optional,if not supported ,please set the value to "false" instead of delete the item group -->
+      <WifiCarPlayCount value="1"/>             <!-- How many WirelessCarPlay transport component currently supported -->
+      <WifiCarPlayTransport1 value="true">      <!-- If supported multiple transport here,must begin with WifiCPTransport1 -->
+        <Identifier value="6"/>                 <!-- All the Identifier in the Serial/USBDevice/USBHost/Bluetooth/WirelessCarPlay must be unique -->
+        <Name value="WirelessCarPlay1"/>        <!-- The name can be modified,must not be NULL -->
+        <SupportiAP2 value="true"/>             <!-- If the transport support iAP2 connection,value must be "true" -->
+        <SupportCarPlay value="true"/>          <!-- If the transport support CarPlay connection,value must be "true" -->
+      </WifiCarPlayTransport1>
+      <WifiCarPlayTransport2 value="true">
+        <Identifier value="7"/>                 <!-- All the Identifier in the Serial/USBDevice/USBHost/Bluetooth/WirelessCarPlay must be unique -->
+        <Name value="WirelessCarPlay2"/>        <!-- The name can be modified,must not be NULL -->
+        <SupportiAP2 value="true"/>             <!-- If the transport support iAP2 connection,value must be "true" -->
+        <SupportCarPlay value="true"/>          <!-- If the transport support CarPlay connection,value must be "true" -->
+      </WifiCarPlayTransport2>
+    </WirelessCarPlay>
+  </Transport>
+  <EANativeTransport value="false">             <!-- Optional,if not supported ,please set the value to "false" instead of delete the item group -->
+    <EANPCount value="0">                       <!-- How many EAP the assessory supported current now -->
+        <EAP1>                                  <!-- If supported many EAP,here must begin with EAP1 -->
+          <Identifier value="1"/>
+          <Name value="com.headunit.demoprotocol"/>      <!-- the name must be in reverse-DNS format -->
+          <MatchAction value="1"/>              <!--  0 not prompt user find the match app in device setting,and there is not a match app in the device setting;
+                                                       1 will prompt user find the match app in device setting ,there is a match app in the device setting
+                                                       2 not promt user  find the match app in device setting ,but there is a match app in the device setting-->
+          <NativeTransportComponentId value="1"/> <!-- Must refer to the corresponding USBHost Idendifier in the Transport USBHost-->
+        </EAP1>
+        <EAP2>
+          <Identifier value="2"/>
+          <Name value="com.pandora.link.v1"/>
+          <MatchAction value="0"/>
+          <NativeTransportComponentId value="1"/>
+        </EAP2>
+    </EANPCount>
+  </EANativeTransport>
+  <EASession value="false">                       <!-- Optional,if not supported ,please set the value to "false" instead of delete the item group -->
+    <EASPCount value="0">                         <!-- How many EAP the accssory supported current now -->
+        <EAP1>                                    <!-- If supported many EAP,here must begin with EAP1 -->
+          <Identifier value="1"/>
+          <Name value="com.headunit.demoprotocol"/>     <!-- the name must be in reverse-DNS format -->
+          <MatchAction value="1"/>                <!--  0 not prompt user find the match app in device setting,and there is not a match app in the device setting;
+                                                        1 will prompt user find the match app in device setting ,there is a match app in the device setting
+                                                        2 not promt user  find the match app in device setting ,but there is a match app in the device setting-->
+          <ExternalAccessoryProtocolCarPlay value="false"/> <!-- is this eap is for carplay -->
+        </EAP1>
+        <EAP2>                                    <!-- Optional -->
+          <Identifier value="2"/>
+          <Name value="com.pandora.link.v1"/>
+          <MatchAction value="0"/>
+          <ExternalAccessoryProtocolCarPlay value="false"/> <!-- is this eap is for carplay -->
+        </EAP2>
+    </EASPCount>
+  </EASession>
+  <RouteGuidanceDisplay value="true">            <!-- Route Guidance Display component,currently not supported -->
+    <RouteGuiDispCount value="1"/>                <!-- How many component is supported -->
+    <RouteGuiDisp1 value="true">                  <!-- If multiple component is supported ,here must begin with RouteGuiDisp1,and the index must increase in order-->
+      <Identifier value="1"/>                     <!-- All the Identifier in this component group must be unique -->
+      <Name value="RouteComponent1"/>             <!-- The name can be modified,must not be NULL -->
+      <MaxCurrentRoadNameLength value="0"/>       <!-- How many of widest character in the font used to display CurrentRoadName can be shown to the user,if 0,this item will be ignored -->
+      <MaxDestinationNameLength value="0"/>       <!-- How many of widest character in the font used to display DestinationName can be shown to the user,if 0,this item will be ignored -->
+      <MaxAfterManeuverRoadNameLength value="0"/> <!-- How many of widest character in the font used to display AfterManeuverRoadName can be shown to the user,if 0,this item will be ignored -->
+      <MaxManeuverDescriptionalLength value="0"/> <!-- How many of widest character in the font used to display ManeuverDescription can be shown to the user,if 0,this item will be ignored -->
+      <MaxGuidanceManeuverCapacity value="0"/>    <!-- Number of maneuvers the accessory can handle at ones,if 0,this item will be ignored -->
+    </RouteGuiDisp1>
+    <RouteGuiDisp2 value="true">
+      <Identifier value="2"/>                     <!-- All the Identifier in this component group must be unique -->
+      <Name value="RouteComponent2"/>             <!-- The name can be modified,must not be NULL -->
+      <MaxCurrentRoadNameLength value="0"/>       <!-- How many of widest character in the font used to display CurrentRoadName can be shown to the user,if 0,this item will be ignored -->
+      <MaxDestinationNameLength value="0"/>       <!-- How many of widest character in the font used to display DestinationName can be shown to the user,if 0,this item will be ignored -->
+      <MaxAfterManeuverRoadNameLength value="0"/> <!-- How many of widest character in the font used to display AfterManeuverRoadName can be shown to the user,if 0,this item will be ignored -->
+      <MaxManeuverDescriptionalLength value="0"/> <!-- How many of widest character in the font used to display ManeuverDescription can be shown to the user,if 0,this item will be ignored -->
+      <MaxGuidanceManeuverCapacity value="0"/>    <!-- Number of maneuvers the accessory can handle at ones,if 0,this item will be ignored -->
+    </RouteGuiDisp2>
+  </RouteGuidanceDisplay>
+  <FileTransfer value="true" />                  <!-- FileTransfer feature -->
+  <ControlMessage>
+    <AccessoryAuthentication value="true"/>       <!-- Must be true -->
+    <AccessoryIdentification value="true">        <!-- Must be true -->
+      <VehicleInfo value="true">                  <!-- Vehilce information -->
+        <Identifier value="2"/>
+        <Name value="HeadUnit"/>
+        <EngineTypeCount value="0">               <!-- How many engine type is define below,may have two or more types,if 0,all the Type below will be ignored -->
+           <EngineType1 value="0"/>               <!-- 0:Gasoline,1:Diesel,2:Electric,4:CNG -->
+           <EngineType2 value="1"/>               <!-- Optional -->
+        </EngineTypeCount>
+        <DisplayName value="Secret"/>             <!-- Modify it as needed ,but must not be NULL-->
+        <MapDispName value="false">               <!-- Currently ATS tool not supported ,please set the value to "false" instead of delete the item group -->
+          <DispName value="MapDispName"/>         <!-- Modify it as needed ,but must not be NULL-->
+        </MapDispName>            
+      </VehicleInfo>
+    </AccessoryIdentification> 
+    <AppLaunch value="false"/>                    <!-- AppLaunch feature-->
+    <AssitiveTouch value="false"/>                <!-- Currently this feature is not implement ,so this item should be ignore  -->
+    <BluetoothConnection value="false"/>          <!-- Currently this feature is not implement ,so this item should be ignore  -->
+    <DeviceAuthentication value="false"/>         <!-- Currently this feature is not implement ,so this item should be ignore  -->
+    <DeviceNotifications value="true">           <!-- DeviceNotifications feature-->
+      <DeviceInformationUpdate value="true"/>     <!-- Device information changed,it's a device name as shown in Setting -->
+      <DeviceLanguageUpdate value="true"/>        <!-- Device language update -->
+      <DeviceTimeUpdate value="true"/>            <!-- Device time update -->
+      <DeviceUUIDUpdate value="true"/>            <!-- Device UUID update -->
+      <WirelessCarPlayUpdate value="true"/>      <!-- Wifi CarPlay status update,only for CarPlay over both wired and wireless transports  -->
+      <DeviceTransportIdentifierNotification value="true"/>  <!-- Device transport identifier update,only for CarPlay over both wired and wireless transports -->
+    </DeviceNotifications>
+    <ExternalAccessoryProtocol value="false"/>    <!-- ExternalAccessoryProtocol feature-->
+    <HumanInterfaceDevice value="true">          <!-- If value is "false",item groups below will be ignored -->
+      <iAP2Hid value="true" >                    <!-- iAP2 HID Component, -->
+        <Identifier value="1"/>                   <!-- All the HIDComponentIdetifier must be unique -->
+        <Name value="iAP2HID"/>                   <!-- The name can be modified,must not be NULL -->
+        <Function value="1"/>                     <!-- 0:Keyboard,1:Media Playback Remote,2:AssistiveTouch Pointer,4:Gamepad(Form-Fitting),6:Gamepad(Non Form-Fitting),7:Assistive Switch Control,8:Headset-->
+      </iAP2Hid>
+      <USBHostHID value="false">                  <!-- USB Host HID Component -->
+        <Identifier value="2"/>                   <!-- All the HIDComponentIdetifier must be unique -->
+        <Name value="USBHostHID"/>                <!-- The name can be modified,must not be NULL -->
+        <Function value="1"/>                     <!-- 0:Keyboard,1:Media Playback Remote,2:AssistiveTouch Pointer,4:Gamepad(Form-Fitting),6:Gamepad(Non Form-Fitting),7:Assistive Switch Control,8:Headset-->
+        <USBHostTransportIdentifier value="1"/>   <!-- Must refer to the corresponding USBHost Idendifier in the Transport USBHost-->
+        <USBHostTransportInterfaceNumber value="1"/>  <!-- Must match the accessory's coresponding USB device interface descriptor -->
+      </USBHostHID>
+      <BluetoothHID value="false">                  <!-- BluetoothHIDComponent ,currently not supported -->
+        <Identifier value="3"/>                     <!-- All the HIDComponentIdetifier must be unique -->
+        <Name value="BluetoothHID"/>                <!-- The name can be modified,must not be NULL -->
+        <Function value="1"/>                       <!-- 0:Keyboard,1:Media Playback Remote,2:AssistiveTouch Pointer,4:Gamepad(Form-Fitting),6:Gamepad(Non Form-Fitting),7:Assistive Switch Control,8:Headset-->
+        <BluetoothTransportIdentifier value="1"/>   <!-- Must refer to the corresponding Bluetooth Transport Idendifier in the Transport Bluetooth -->
+      </BluetoothHID>
+    </HumanInterfaceDevice>  
+    <Location value="false">                         <!-- The location feature -->
+      <Identifier value="1"/>
+      <Name value="LocationName"/>                  <!-- The name can be modified,must not be NULL -->
+      <GPSFixData value="true"/>                    <!-- GPGGA -->
+      <RecommendMinGPSTransitData value="true"/>    <!-- GPRMC -->
+      <GPSSatellitesInView value="false"/>          <!-- Optional,GPGSV,will be delete in next version ,because the spec has delete it-->
+      <VehicleSpeedData value="true"/>              <!-- PASCD -->
+      <VehicleGyroData value="false"/>              <!-- Optional,will be delete in next version ,because the spec has delete it -->
+      <VehicleAccelerometerData value="false"/>     <!-- Optional,will be delete in next version ,because the spec has delete it -->
+      <VehicleHeadingData value="false"/>           <!-- Optional,will be delete in next version ,because the spec has delete it -->
+    </Location>
+    <MediaLibraryAccess value="true">              <!-- MediaLibraryAccess feature -->
+      <StartMediaLibraryInformation value="true"/>  <!-- Must be true -->
+      <MediaLibraryInformation value="true"/>       <!-- Must be true -->
+      <StopMediaLibraryInformation value="true"/>   <!-- Must be true -->
+      <StartMediaLibraryUpdates value="true"/>      <!-- Must be true -->
+      <MediaLibraryUpdate value="true"/>            <!-- Must be true -->
+      <StopMediaLibraryUpdates value="true"/>       <!-- Must be true -->
+      <PlayMediaLibraryCurrentSelection value="true"/>
+      <PlayMediaLibraryItems value="true"/>
+      <PlayMediaLibraryCollection value="true"/>
+      <PlayMediaLibrarySpecial value="true"/>
+    </MediaLibraryAccess>
+    <NowPlaying value="true">                        <!-- NowPlaying if support,should send or receive these as below -->
+      <StartNowPlayingUpdate value="true"/>         <!-- must be true -->
+      <NowPlayingUpdate value="true"/>              <!-- must be true -->
+      <StopNowPlayingUpdate value="true"/>          <!-- must be true -->
+      <SetNowPlyaingInformation value="true"/>       <!-- may,if customer not implement this feature,here should be false  -->
+    </NowPlaying>
+    <Power value="true">                            <!-- Must be "true",currently we must support the power feature -->
+      <PowerSourceUpdate value="true">              <!-- Must be "true" -->
+        <AvailableCurrentForDevice value="1000"/>   <!-- Must be one of the following values 0,500,1000,1500,2100,2400 -->
+        <DeviceBatteryShouldChargeIfPowerIsPresent value="true"/> <!-- When the PowerProvidingCapability is set to 2,this value must be true -->
+      </PowerSourceUpdate>
+    </Power>
+    <USBDeviceModeAudio value="false"/>             <!-- USBDeviceModeAudio feature,for iPod feature this value must be "true" -->
+    <Telephony value="false"/>                      <!-- Not implement ,so this item should be ignored -->
+    <VehicleStatus value="false">                   <!-- Not implement ,so this item should be ignored -->
+      <Identifier value="2"/>
+      <Name value="VehicleStatus"/>                 <!-- The name can be modified,must not be NULL -->
+      <Range value="0"/>
+      <OutsideTemperature value="0"/>
+      <RangeWarning value="0"/>
+    </VehicleStatus>
+    <VioceOver value="false"/>                     <!-- Not implement ,so this item should be ignored  -->
+    <OOBBTP value="false"/>                        <!-- only for carplay over USB -->
+    <WiFiInfomationSharing value="false"/>         <!-- WiFiInfomationSharing feature -->
+    <AppDiscovery value="false">
+      <StartAppDiscoveryUpdates value="true"/>     <!-- Start app discovery updates -->
+      <StopAppDiscoveryUpdates value="true"/>      <!-- Stop app discovery updates -->
+      <AppDiscoveryUpdate value="true"/>           <!-- App discovery update -->
+      <RequestAppDiscoveryAppIcons value="true"/>  <!-- Request app discovery app icons -->
+      <AppDiscoveryAppIcon value="true"/>          <!-- App discovery app icon -->
+    </AppDiscovery>
+    <RouteGuidance value="true">                  <!-- Route Guidance Display -->
+      <StartRouteGuidanceUpdates value="true"/>    <!-- Start Route Guidance Updates -->
+      <RouteGuidanceUpdate value="true"/>          <!-- Route Guidance Update -->
+      <RouteGuidanceManeuverUpdate value="true"/>  <!-- Route Guidance Maneuver Update -->
+      <LaneGuidanceInformation value="true"/>      <!-- Lane Guidance Information -->
+      <StopRouteGuidanceUpdates value="true"/>     <!-- Stop Route Guidance Updates -->
+    </RouteGuidance>
+    <Communications value="true">
+      <StartCallStateUpdates value="true"/>
+      <CallStateUpdate value="true"/>
+      <StopCallStateUpdates value="true"/>
+      <StartCommunicationsUpdates value="true"/>
+      <CommunicationsUpdate value="true"/>
+      <StopCommunicationsUpdates value="true"/>
+      <InitiateCall value="false"/>
+      <AcceptCall value="true"/>
+      <EndCall value="true"/>
+      <SwapCalls value="false"/>
+      <MergeCalls value="false"/>
+      <HoldStatusUpdate value="false"/>
+      <MuteStatusUpdate value="false"/>
+      <SendDTMF value="false"/>
+    </Communications>
+    <CarPlayConnection value="false">
+      <CarPlayAvailability value="true"/>
+      <CarPlayStartSession value="true"/>
+    </CarPlayConnection>
+    <OutOfBandBluetoothPairing value="true">
+      <StartBluetoothPairing value="true"/>
+      <BluetoothPairingAccessoryInformation value="true"/>
+      <BluetoothPairingStatus value="true"/>
+      <StopBluetoothPairing value="true"/>
+    </OutOfBandBluetoothPairing>
+  </ControlMessage>
+  <HID>
+    <MediaPlaybackRemote value="true">            <!-- Currently for iPod,and it use the iAP2Hid component -->
+        <HIDId	value="1"/>                        <!-- must refer to the iAP2Hid's Identifier -->
+        <VendorId value="0x04d8"/>                 <!-- The value must be a hexadecimal -->
+        <ProductId value="0x36"/>                  <!-- The value must be a hexadecimal -->
+        <LocalKeyboardCode value="0"/>
+        <Play value="true"/>
+        <Pause value="true"/>
+        <ScanNextTrack value="true"/>
+        <ScanPreviousTrack value="true"/>
+        <Shuffle value="false"/>
+        <Repeat value="false"/>
+        <NormalSpeed value="false"/>
+        <SpeedUp value="false"/>
+        <SpeedDown value="false"/>
+        <PlayPause value="true"/>
+        <Siri value="false"/>
+        <Mute value="false"/>
+        <VolumeUp value="false"/>
+        <VolumeDown value="false"/>
+        <Promote value="false"/>
+        <Demote value="false"/>
+        <AddToCart value="false"/>
+    </MediaPlaybackRemote>
+  </HID> 
+  <LinkPara value="true">                          <!-- The following parameters,is for iAP2 link layer,it's highly recommended not to modify these parameters by your self, if need ,contact with <kun.zhou@sunmedia.com.cn> -->
+    <LinkVersion value="1"/>                       <!-- The version of link being established,only valid value at this time is 1 -->
+    <ControlSessionLinkVersion value="2"/>         <!-- Control session version,must be 1 or 2 -->
+    <FileTransferLinkVersion value="1"/>           <!-- file transfer session version,must be 1 or 2 -->
+    <EASessionLinkVersion value="1"/>              <!-- EA session version,only valid value at this time is 1 -->
+    <MaxOutstandingPackets value="8"/>             <!-- The maximum number of packet that may be sent without receiving an acknowledgement,valid value 1~127 -->
+    <MaxReveivedPacketSize value="4096"/>          <!-- The largest possible packet length in bytes,valid value 24~65535 -->
+    <RetransmitTimeout value="10000"/>             <!-- The timeout value in milliseconds for retransmission of unacknowledged packets,20 ~ 65535 -->
+    <CumulativeAckTimeout value="500"/>           <!-- The timeout value in milliseconds after which an acknowledgement packet must immediately sent if another packet is not sent,valid value 10 ~ half of retransmission timeout-->
+    <MaxNumOfRetransmissions value="30"/>          <!-- The maximum number of packet retransmissions attempted before the link is considered to be broken,valid value 0~30 -->
+    <MaxCumulativeAcks value="7"/>                 <!-- The maximun number of received acknowledgements that may be accumulated before an acknowledgement packet must be sent if another packet is not sent,valid value 0~127 -->
+  </LinkPara>  
+</property>
+

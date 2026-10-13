@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+	<ModuleInfo>
+		<ModuleName value="blueTooth"/>
+		<MajorVersion value="1"/>
+		<MinorVersion value="1"/>
+		<ReleaseVersion value="0"/>
+	</ModuleInfo>
+	<AdapterConfig>
+		<SupportWBS value = "0"/>
+		<SupportAAC value = "0" />
+		<SupportPLC value = "1" />
+		<MaxPairedDevice value = "7" />
+		<MaxConnectDevice value = "1" />				<!-- ACL number-->
+		<AuthType value = "0" />						<!-- 0:BT_AUTH_JUSTWORK 1:BT_AUTH_NUMERIC_COMPARISON 2:BT_AUTH_PINCODE-->
+		<PairedSortStyle value = "1" />					<!-- 0:BT_PAIRED_DEV_SORTBY_PAIR_TIME 1:BT_PAIRED_DEV_SORTBY_CONN_TIME-->
+		<ReplacePolicy value = "0" />					<!-- 0:BT_PAIRING_REPLACE_POLICY_REPLACE_OLDER 1:BT_PAIRING_REPLACE_POLICY_REJECT-->
+		<Linklosstimeout value = "-1" />
+	</AdapterConfig>
+	<AutoConnConfig>
+		<AutoConnType value = "0"/>						<!-- 0:AUTO_CONN_DISABLE 1:AUTO_CONN_ALL_BONDED 2:AUTO_CONN_SPECIFIC-->
+		<AutoConnectProfiles value = "5"/>				<!-- 5(0x101):(1<<HFPHF)|(1<<A2DPSNK) bit0:HFPHF bit1:PBAPC bit2:A2DPSNK bit3:SPP bit4:HID-->
+		<AutoConnectDeviceNum value = "1"/>
+		<AutoConnectDevices>
+			<Addr0 value = "0"/>						<!--0~255-->
+			<Addr1 value = "1"/>						<!--0~255-->
+			<Addr2 value = "2"/>						<!--0~255-->
+			<Addr3 value = "3"/>						<!--0~255-->
+			<Addr4 value = "4"/>						<!--0~255-->
+			<Addr5 value = "5"/>						<!--0~255-->
+		</AutoConnectDevices>
+		<AutoConnectLatency value = "10000"/>			<!-- 10s-->
+		<AutoConnectA2dpFirst value = "0"/>
+		<AutoConnStopCond value = "1"/>					<!-- 0:AUTO_CONN_ALL_CONNECTED 1:AUTO_CONN_ONE_CONNECTED-->
+		<AutoConnectDeviceRetryTimes value = "2"/>
+		<AutoConnectProfileRetryTimes value = "1"/>
+		<ReconnectDropedDevice value = "1"/>
+	</AutoConnConfig>
+	<PbabMemoryConfig>
+		<PbabMemoryPosition value = "0"/>				<!-- 0:PBAP_MEMORY_NOT_EXIST_IN_SERVICE 1:PBAP_MEMORY_EXIST_IN_SERVICE 2:PBAP_SAVE_FLASH_IN_SERVICE-->
+	</PbabMemoryConfig>
+	<PbabRecordConfig>
+		<MaxTelephone value = "1000"/>
+		<MaxContact value = "1000"/>
+		<MaxTelephoneOfOneContact value = "6"/>
+		<MaxHistoryLog value = "20"/>
+	</PbabRecordConfig>
+</property>

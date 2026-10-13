@@ -1,0 +1,10 @@
+on init
+    mount squashfs rom@opt. /opt wait ro
+    mount squashfs rom@spsdk. /usr/local wait ro
+    mount squashfs rom@spapp. /application wait ro
+    mount yaffs2 mtd@nvm /media/flash/nvm wait noatime
+    mount yaffs2 mtd@userdata /media/flash/userdata wait noatime
+
+#on property:ro.sdklate.start=1
+#    start discserver
+

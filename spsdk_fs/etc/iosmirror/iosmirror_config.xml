@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+	<ModuleInfo>
+		<ModuleName value="iOSMirror"/>
+		<MajorVersion value="2"/>
+		<MinorVersion value="2"/>
+		<ReleaseVersion value="0"/>
+	</ModuleInfo>
+	<Pair>
+		<RecordPath value = "/tmp/sp/media/flash/nvm"/>
+		<Number value = "5" />
+		<Timeout value = "30" />   <!-- unit: second-->
+	</Pair>
+	<Video>
+		<Display>
+			<Left   value = "0"/>
+			<Top    value = "0"/>
+			<Right  value = "1024"/>
+			<Bottom value = "600"/>
+		</Display>
+	</Video>
+</property>

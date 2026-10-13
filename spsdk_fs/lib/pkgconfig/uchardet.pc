@@ -1,0 +1,10 @@
+libdir=/home/r.zhou/prebuilt_test/prebuiltsrc/thirdparty/uchardet-v0.0.7/_install/usr/local/lib
+includedir=/home/r.zhou/prebuilt_test/prebuiltsrc/thirdparty/uchardet-v0.0.7/_install/usr/local/include
+
+Name: uchardet
+Description: An encoding detector library ported from Mozilla
+Version: 0.0.7
+Requires:
+Libs: -L${libdir} -luchardet
+Libs.private: -lstdc++
+Cflags: -I${includedir}/uchardet

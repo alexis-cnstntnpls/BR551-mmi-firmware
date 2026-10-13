@@ -1,0 +1,10 @@
+prefix=/home/shengwei.peng/workspace/8368u-master/prebuiltsrc/prebuiltsrc/thirdparty/mtdev-1.1.4/_install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: mtdev
+Description: Multitouch Protocol Translation Library
+Version: 1.1.4
+Libs: -L${libdir} -lmtdev
+Cflags: -I${includedir}

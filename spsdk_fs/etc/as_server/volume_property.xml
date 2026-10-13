@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+    <moduleInfo>
+        <majorVersion value="1" />
+        <minorVersion value="0" />
+        <releaseVersion value="2" />
+    </moduleInfo>
+    <master value = "100"/><!--[0, 148]-->
+    <alter value="66" /><!--[0, 148]-->
+    <tracks>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+FilePlayer"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+DiscPlayer"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!---Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+BtMusic"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+BtPhone"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+AuxIn"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+Mic"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+GPS"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="auxiliary"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+CarPlayMedia"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="auxiliary"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+CarPlayAlert"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+CarPlayTelephony"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="auxiliary"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+CarPlayTelephony"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="auxiliary"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+CarPlaySpeech"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="auxiliary"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+CarPlayDefault"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="auxiliary"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+CarPlayAuxSpeech"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="auxiliary"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+CarPlayAlt"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+AndroidAuto"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+BtPcmPhone"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+IPod"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+CarLife"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+IosMirror"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+WebLink"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+AirPlayMedia"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+AirPlayMedia"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="auxiliary"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+AirPlayMedia"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="BT_PHONECALL_Track"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="BT_RINGTONE_Track"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="BT_AUDIO_Track"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="Qspmediaplayer"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+        <track>
+            <tag value="main"/><!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h,eg:AUDIO_TAG_MAIN_AUDIO, AUDIO_TAG_ALTER_AUDIO, AUDIO_TAG_AUXIL_AUDIO-->
+            <name value="S+BtRingtone"/>
+            <volume value="66"/><!--[0, 148]-->
+        </track>
+    </tracks>
+    <streamTypes>
+        <streamType>
+            <name value="media" />
+            <volume value ="66"/><!--[0, 148]-->
+        </streamType>
+        <streamType>
+            <name value="phone" />
+            <volume value ="66"/><!--[0, 148]-->
+        </streamType>
+        <streamType>
+            <name value="ringtone" />
+            <volume value ="66"/><!--[0, 148]-->
+        </streamType>
+        <streamType>
+            <name value="voice" />
+            <volume value ="66"/><!--[0, 148]-->
+        </streamType>
+        <streamType>
+            <name value="other" />
+            <volume value ="66"/><!--[0, 148]-->
+        </streamType>
+    </streamTypes>
+    <mutes>
+        <mute>
+            <tag value="main"/> <!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h -->
+            <ramp value="false" />
+            <enable value="false"/>
+        </mute>
+        <mute>
+            <tag value="alternative"/> <!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h -->
+            <ramp value="false" />
+            <enable value="false"/>
+        </mute>
+        <mute>
+            <tag value="second"/> <!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h -->
+            <ramp value="false" />
+            <enable value="false"/>
+        </mute>
+        <mute>
+            <tag value="auxiliary"/> <!--Refer to the definition of AUDIO_TAG_XX in spAudioTypes.h -->
+            <ramp value="false" />
+            <enable value="false"/>
+        </mute>
+    </mutes>
+    <channelGains>
+        <channelGain>
+            <channel value="AUDIO_CHANNEL_LF"/> <!--Refer to the definition of audio_channel_idx_e in spAudioTypes.h-->
+            <gain value="100" /><!--[0, 148]-->
+        </channelGain>
+        <channelGain>
+            <channel value="AUDIO_CHANNEL_RF"/> <!--Refer to the definition of audio_channel_idx_e in spAudioTypes.h-->
+            <gain value="100" /><!--[0, 148]-->
+        </channelGain>
+        <channelGain>
+            <channel value="AUDIO_CHANNEL_LS"/> <!--Refer to the definition of audio_channel_idx_e in spAudioTypes.h-->
+            <gain value="100" /><!--[0, 148]-->
+        </channelGain>
+        <channelGain>
+            <channel value="AUDIO_CHANNEL_RS"/> <!--Refer to the definition of audio_channel_idx_e -->
+            <gain value="100" /><!--[0, 148]-->
+        </channelGain>
+    </channelGains>
+</property>

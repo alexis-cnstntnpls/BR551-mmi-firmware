@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+	<ModuleInfo>
+		<ModuleName value="AirPlay"/>
+		<MajorVersion value="1"/>
+		<MinorVersion value="0"/>
+		<ReleaseVersion value="5"/>
+	</ModuleInfo>
+	<DeviceInfo>
+		<DeviceName value="8368u-airplay"/>
+	</DeviceInfo>
+	<Display>
+		<WidthPixel value="1280"/>
+		<HeightPixel value="720"/>
+		<RefreshRate value="30"/>
+	</Display>
+	<Screen>
+		<ResolutionWidth value="1024"/>
+		<ResolutionHeight value="600"/>
+	</Screen>
+	<Audio>
+		<OutputFormat value="pcm"/><!-- aac_eld/pcm-->
+	</Audio>
+	<NicInfo>
+		<NicName value="wlan0"/>
+	</NicInfo>
+</property>

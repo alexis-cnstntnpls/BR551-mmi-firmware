@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+    <ModuleInfo>
+        <ModuleName value="AppleCarPlay"/>
+        <MajorVersion value="5"/>
+        <MinorVersion value="0"/>
+        <ReleaseVersion value="0"/>
+    </ModuleInfo>
+    <OSInfo value="Linux Gemini 4.9.217 armv7l"/>  <!-- modify it by custom -->
+    <firmwareRevision value="1.0.0"/>              <!-- modify it by custom -->
+    <hardwareRevision value="1.0.0"/>              <!-- modify it by custom -->
+    <manufacturer value="HeadUnit"/>               <!-- modify it by custom -->
+    <model value="HeadUnit-1"/>                    <!-- modify it by custom -->
+    <name value="CarPlay"/>                        <!-- do not modify it -->
+    <oemIcon>
+        <oemIconDefault value="true">                                       <!-- default png photo; change to true if supplied -->
+            <path value="/application/etc/carplay/CPIcon_gplink.png"/>            <!-- modify it by custom path -->
+        </oemIconDefault>
+        <oemIcon120 value="false">                                           <!-- 120x120 pixels png photo; change to true if supplied -->
+            <path value="/application/etc/carplay/oemIcon120.png"/>         <!-- modify it by custom path -->
+            <prerendered value="true"/>                                     <!-- Whether or not the icon is pre-rendered (default is true if not present) -->
+        </oemIcon120>
+        <oemIcon180 value="false">                                          <!-- 180x180 pixels png photo; change to true if supplied -->
+            <path value="/application/etc/carplay/oemIcon180.png"/>         <!-- modify it by custom path -->
+            <prerendered value="true"/>                                     <!-- Whether or not the icon is pre-rendered (default is true if not present) -->
+        </oemIcon180>
+        <oemIcon256 value="true">                                          <!-- 256x256 pixels png photo; change to true if supplied -->
+            <path value="/media/flash/userdata/cp_back.png"/>              <!-- modify it by custom path -->
+            <prerendered value="true"/>                                     <!-- Whether or not the icon is pre-rendered (default is true if not present) -->
+        </oemIcon256>
+        <oemIconLabel value="Exit"/>                                    <!-- Will display on CarPlay UI OEMIcon lable, modify it by custom -->
+    </oemIcon>
+    <display>
+        <heightPhysical value="88"/>            <!-- modify it for different product, TODO: should read it from display -->
+        <widthPhysical value="157"/>            <!-- modify it for different product, TODO: should read it from display -->
+        <heightPixels value="600"/>             <!-- modify it for different product -->
+        <widthPixels value="1024"/>             <!-- modify it for different product -->
+        <maxFPS value="60"/>                    <!-- 30: default; 60: for future support(not support now) -->
+        <feature value="10"/>                    <!-- 0x0002(2): knob; 0x0004(4): loFi;  0x0008(8): HiFi;  0x0010(16): Muti -->
+        <primaryInputDevice value="2"/>         <!-- 0x01 : touchScreen; 0x02 : touchPad; 0x03 : knob-->
+        <initialViewArea value="0"/>            <!-- Specifies the index of the initial view area. -->
+        <adjacentViewAreas>                     <!-- Specifies an array of viewAreas indexes that describe the view areas that can be transitioned from the viewarea identified by initialViewArea. -->
+            <count value="1"/>
+            <adjacentArea0 value="1"/>
+            <adjacentArea1 value="3"/>
+        </adjacentViewAreas>
+        <appearanceMode value="2"/>             <!-- 0: light, 1: dark -->
+        <appearanceSetting value="1"/>          <!-- 0: automatic, 1: user choice, 2: always -->
+        <initialURL value="maps:/car/instrumentcluster"/>    <!-- URL of UI content to be shown on alternate display at connection.  -->
+    </display>
+    <HID>                                       <!-- headunit add for customer -->
+        <MultiTouch value="false">              <!-- muliTouch support, if you are not absolutely clear, do not modify it -->
+            <name value="MultiTouch"/>          <!-- if you are not absolutely clear, do not modify it -->
+        </MultiTouch>
+        <SingleTouch value="true">              <!-- singleTouch support, if you are not absolutely clear, do not modify it -->
+            <name value="SingleTouch"/>         <!-- if you are not absolutely clear, do not modify it -->
+        </SingleTouch>
+        <Consumer value="true">                 <!-- Consumer support -->
+            <name value="Consumer"/>            <!-- if you are not absolutely clear, do not modify it -->
+            <key>
+                <ACHome value="true"/>              <!-- modify it by custom -->
+                <ACBack value="true"/>              <!-- modify it by custom -->
+                <Record value="false"/>              <!-- modify it by custom -->
+                <Play value="true"/>                <!-- modify it by custom -->
+                <Pause value="true"/>               <!-- modify it by custom -->
+                <PlayOrPause value="true"/>         <!-- modify it by custom -->
+                <ScanNextTrack value="true"/>       <!-- modify it by custom -->
+                <ScanPreviousTrack value="true"/>   <!-- modify it by custom -->
+            </key>
+        </Consumer>
+        <Telephony value="true">                <!-- Telephony support -->
+            <name value="Telephony"/>           <!-- if you are not absolutely clear, do not modify it -->
+            <key>
+                <HookSwitch value="true"/>          <!-- modify it by custom -->
+                <Flash value="true"/>               <!-- modify it by custom -->
+                <Drop value="true"/>                <!-- modify it by custom -->
+                <Mute value="false"/>                <!-- modify it by custom -->
+                <PhoneKey0 value="false"/>           <!-- modify it by custom -->
+                <PhoneKey1 value="false"/>           <!-- modify it by custom -->
+                <PhoneKey2 value="false"/>           <!-- modify it by custom -->
+                <PhoneKey3 value="false"/>           <!-- modify it by custom -->
+                <PhoneKey4 value="false"/>           <!-- modify it by custom -->
+                <PhoneKey5 value="false"/>           <!-- modify it by custom -->
+                <PhoneKey6 value="false"/>           <!-- modify it by custom -->
+                <PhoneKey7 value="false"/>           <!-- modify it by custom -->
+                <PhoneKey8 value="false"/>           <!-- modify it by custom -->
+                <PhoneKey9 value="false"/>           <!-- modify it by custom -->
+                <PhoneKeyStar value="false"/>        <!-- modify it by custom -->
+                <PhoneKeyPound value="false"/>       <!-- modify it by custom -->
+                <KeyboardDELETE value="false"/>      <!-- modify it by custom -->
+            </key>
+        </Telephony>
+        <Trackpad value="false">                <!-- Trackpad support, not implement now -->
+            <name value="Trackpad"/>            <!-- if you are not absolutely clear, do not modify it -->
+        </Trackpad>
+        <Knob value="true">                    <!-- Knob support, not implement now -->
+            <name value="MyKnob"/>                <!-- if you are not absolutely clear, do not modify it -->
+            <ConveySelection value="Button1">      <!-- Must be Z or Button1, select one of the two -->
+                <Z/>
+                <Button1/>
+            </ConveySelection>
+            <Scrolling value="Wheel">      <!-- Must be Rz, Dail or Wheel, select one of the three -->
+                <Rz/>
+                <Dial/>
+                <Wheel/>
+            </Scrolling>
+            <Translation value="true"> <!-- if the accessory has translation movement -->
+                <X/>
+                <Y/>
+            </Translation>
+            <ACBack value="true"/> <!-- if "display.primaryInputDevice" is knob, this must be true -->
+            <ACHome value="true"/>
+        </Knob>
+    </HID>
+    <supports>                                  <!-- These supported features need hardwares -->
+        <bluetooth value="true"/>               <!-- if HeadUnit has bluetooth -->
+        <limitedUI value="false"/>              <!-- true: if headunit would display/hide limited UI elements -->
+        <nightMode value="true"/>               <!-- true: if headunit could supported night mode -->
+        <wired value="true"/>                   <!-- true: if headunit has wired -->
+        <wireless value="false"/>               <!-- true: if headunit has wireless -->
+        <mic value="false">
+           <OpLeft value="27.5"/>              <!-- op gain settings, 27.5db -->
+           <OpRight value="27.5"/>             <!-- op gain settings, 27.5db -->
+           <PgaLeft value="0.0"/>              <!-- pga gain settings, 0.0db -->
+           <PgaRight value="0.0"/>             <!-- pga gain settings, 0.0db -->
+        </mic>
+		<disableSpeaker value="false"/>        <!-- false:go through carplay audio,true:not get through CP-->
+        <enabledFeatures value="true">         <!-- [Array of Srings] Accessory approved features for Plugin R15 -->
+            <altScreen value="false">                    <!-- if true, accessory enable feature altScreen -->
+                <stream1 value="true">                   <!-- Have alternate screen H.264 stream1 -->
+                    <heightPhysical value="88"/>         <!-- modify it for different product, TODO: should read it from display -->
+                    <widthPhysical value="157"/>         <!-- modify it for different product, TODO: should read it from display -->
+                    <heightPixels value="480"/>          <!-- modify it for different product -->
+                    <widthPixels value="800"/>           <!-- modify it for different product -->
+                    <maxFPS value="30"/>                 <!-- 30: default; 60: for future support(not support now) -->
+                </stream1>
+                <stream2 value="false">                  <!-- Have alternate screen H.264 stream2 -->
+                    <heightPhysical value="88"/>         <!-- modify it for different product, TODO: should read it from display -->
+                    <widthPhysical value="157"/>         <!-- modify it for different product, TODO: should read it from display -->
+                    <heightPixels value="480"/>          <!-- modify it for different product -->
+                    <widthPixels value="800"/>           <!-- modify it for different product -->
+                    <maxFPS value="30"/>                 <!-- 30: default; 60: for future support(not support now) -->
+                </stream2>
+            </altScreen>
+            <uiContext value="false">               <!-- if true, accessory enable feature uiContext -->
+                <LastOnDisplayURLs>
+                    <maps value="false"/>           <!-- Map or Navigation application -->
+                    <mobilephone value="true"/>     <!-- Telephony application -->
+                    <nowplaying value="false"/>      <!-- Media application -->
+                    <messages value="false"/>       <!-- Messaging application -->
+                </LastOnDisplayURLs>
+                <NowOnDisplayURLs>
+                    <maps value="false"/>           <!-- Map or Navigation application -->
+                    <mobilephone value="true"/>     <!-- Telephony application -->
+                    <nowplaying value="true"/>      <!-- Media application -->
+                    <messages value="false"/>       <!-- Messaging application -->
+                </NowOnDisplayURLs>
+            </uiContext>
+            <enhancedSiri value="false">             <!-- if true, accessory enable feature enhancedSiri -->
+                <enhancedSiriVoice value="false"/>   <!-- Indicates support for launching Siri by voice -->
+                <enhancedSiriButton value="false"/>  <!-- Indicates support for instant activation on button press. -->
+                <voiceModelSupportedLanguages>       <!-- Array of languages supported by the voice trigger model in the accessory. -->
+                    <count value="2"/>               <!-- Languages are specified using the format [language designator]-[region designator], where the -->
+                    <language0 value="en-US"/>       <!-- language designator uses ISO 639-1, and the region designator uses ISO 3166-1. -->
+                    <language1 value="zh-CN"/>       <!-- For more details, see -->
+                </voiceModelSupportedLanguages>      <!-- https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html -->
+                <voiceModelCurrentLanguage value="zh-CN"/>  <!-- Currently set language of the voice model.  -->
+                <supportedSiriTriggerZones value="1"/>      <!-- Bitmask describing the location in vehicle that detected the trigger word. 1: Driver -->
+            </enhancedSiri>
+            <viewAreas value="false">             <!-- if true, accessory enable feature viewAreas -->
+                <count value="2"/>                <!-- The viewArea count -->
+                <viewArea0>
+                    <widthPixels value="800"/>
+                    <heightPixels value="480"/>
+                    <originXPixels value="0"/>
+                    <originYPixels value="0"/>
+                    <safeArea value="true">       <!-- For iOS 13, the safeArea must be included in the viewArea, it is optional for iOS 14+ -->
+                        <widthPixels value="800"/>
+                        <heightPixels value="480"/>
+                        <originXPixels value="0"/>
+                        <originYPixels value="0"/>
+                    </safeArea>
+                    <viewAreaTransitionControl value="false"/>     <!-- If True shows a control in the CarPlay UI to transition to another view area. -->
+                    <viewAreaSupportsFocusTransfer value="false"/> <!-- If True the view area represents a UI configuration where focus transfer is supported. -->
+                    <viewAreaStatusBarEdge value="0"/>            <!-- 0: Status bar position will be determined by the device. 1: Status bar will be positioned at the bottom of the CarPlay UI. 2: Status bar will be positioned on the driver side of the CarPlay UI. -->
+                </viewArea0>
+                <viewArea1>
+                    <widthPixels value="800"/>
+                    <heightPixels value="480"/>
+                    <originXPixels value="0"/>
+                    <originYPixels value="0"/>
+                    <safeArea value="true">       <!-- For iOS 13, the safeArea must be included in the viewArea, it is optional for iOS 14+ -->
+                        <widthPixels value="800"/>
+                        <heightPixels value="480"/>
+                        <originXPixels value="0"/>
+                        <originYPixels value="0"/>
+                    </safeArea>
+                    <viewAreaTransitionControl value="false"/>      <!-- If True shows a control in the CarPlay UI to transition to another view area. -->
+                    <viewAreaSupportsFocusTransfer value="false"/> <!-- If True the view area represents a UI configuration where focus transfer is supported. -->
+                    <viewAreaStatusBarEdge value="0"/>             <!-- 0: Status bar position will be determined by the device. 1: Status bar will be positioned at the bottom of the CarPlay UI. 2: Status bar will be positioned on the driver side of the CarPlay UI. -->
+                </viewArea1>
+            </viewAreas>
+        </enabledFeatures>
+    </supports>
+    <buttonInfo>
+        <count value="2"/>                      <!-- Button information count -->
+        <button0>
+            <buttonType value="0"/>             <!-- 0: Siri -->
+            <buttonLocation value="0"/>         <!-- 0: Steering wheel, 1: Center console, 2: Not located on steering wheel or center console -->
+            <buttonPressDuration value="0"/>    <!-- 0: Short press, 1: Long press -->
+        </button0>
+        <button1>
+            <buttonType value="0"/>             <!-- 0: Siri -->
+            <buttonLocation value="0"/>         <!-- 0: Steering wheel, 1: Center console, 2: Not located on steering wheel or center console -->
+            <buttonPressDuration value="1"/>    <!-- 0: Short press, 1: Long press -->
+        </button1>
+    </buttonInfo>
+    <altScreenSuggestUIURLs>
+        <instructionCard value="false"/>        <!-- "maps:/car/instrumentcluster/instructioncard" - Displays a navigation instruction card. -->
+        <map value="false"/>                    <!-- "maps:/car/instrumentcluster/map" - Displays a navigation map. -->
+        <instrumentCluster value="false"/>      <!-- "maps:/car/instrumentcluster" - Displays navigation content determined by the iOS app. -->
+    </altScreenSuggestUIURLs>
+</property>

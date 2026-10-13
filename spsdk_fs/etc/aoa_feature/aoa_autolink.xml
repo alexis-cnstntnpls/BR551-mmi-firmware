@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+	<AoaFeature>
+		<ManuFacturer value="Sunplus, Inc."/>
+		<Model value="DVD"/>
+		<Description value="Autolink"/>
+		<Version value="2.0"/>
+		<Url value="http://support.autolink.top/Autolink.apk"/>
+		<Serial value="0000000012345678"/>
+		<Mode value="1"/>
+		<Name value="aoa-autolink%d"/>
+		<PPS value="0"/>
+	</AoaFeature>
+</property>

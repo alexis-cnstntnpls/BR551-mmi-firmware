@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+							 <property>
+							 <Connection>
+							 <ProbeTimeout value="3000"/>
+									 </Connection>
+									 <CarStaticInfo>
+									 <ChannelID value="20602103"/>
+											 <VersionName value="2.0.0"/>
+													 <VersionCode value="2"/>
+															 </CarStaticInfo>
+															 <CarInfo>
+															 <SystemOS value="linux"/>
+																	 <Manufacturer value="headunit"/>
+																			 <Model value="carlife.83xx"/>
+																					 <Release value="1.0"/>
+																							 </CarInfo>
+																							 <Video>
+																							 <Display>
+																							 <Left   value = "0"/>
+																									 <Top    value = "0"/>
+																											 <Right  value = "800"/>
+																													 <Bottom value = "480"/>
+																															 </Display>
+																															 <DispWindow>
+																															 <Left   value = "0"/>
+																																	 <Top    value = "0"/>
+																																			 <Right  value = "800"/>
+																																					 <Bottom value = "480"/>
+																																							 </DispWindow>
+																																							 <FrameRate value = "30"/>
+																																									 <SupportH264 value = "true"/>
+																																											 <SupportMp4  value = "false"/>   <!-- not supported so far-->
+																																													 </Video>
+																																													 <Input>
+																																													 <TouchScreen value="true">
+																																															 <ScreenType value="2"/>    <!-- capacitive:1 resistive:2-->
+																																																	 <ScreenWidth value="800"/>
+																																																			 <ScreenHeight value="480"/>
+																																																					 </TouchScreen>
+																																																					 </Input>
+																																																					 <Feature>
+																																																					 <VoiceMicOrigin   value = "0"/>    <!-- vehicle:0 mobile:1 unspport:2-->
+																																																							 <AdapteFocusUI    value = "false"/>
+																																																									 <AdapteBluetooth  value = "true"/>
+																																																											 </Feature>
+																																																											 </property>

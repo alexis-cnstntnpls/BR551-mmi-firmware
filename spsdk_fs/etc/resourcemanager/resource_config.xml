@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resources>
+	<Resource name="MainScreen"/>
+	<Resource name="MainAudio"/>
+	<Resource name="RearAudio"/>
+	<Resource name="Activation"/>
+</Resources>

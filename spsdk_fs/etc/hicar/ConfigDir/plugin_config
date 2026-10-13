@@ -1,0 +1,15 @@
+plugins:8
+EngineEventSource[thread:engine_event_source]:0 static
+DailyControl[thread:daily_control]:0 static
+EventSerialize[thread:event_serialize]:0 static
+LogPacking[thread:log_packing]:0 static
+RunningLogCollector[]:0 static
+PrivacyCompliance[]:0 static
+EngineEventVerify[thread:engine_event_verify]:0 static
+StatisticsCollect[thread:statistics_collect]:0 static
+pipelines:2
+EnginePipeline:EngineEventVerify DailyControl PrivacyCompliance EventSerialize LogPacking
+StatisticsPipeline:StatisticsCollect
+pipelinegroups:2
+EngineEventSource:EnginePipeline StatisticsPipeline
+StatisticsCollect:EnginePipeline

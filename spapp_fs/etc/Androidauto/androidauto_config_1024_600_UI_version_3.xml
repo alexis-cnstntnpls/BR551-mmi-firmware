@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+	<ModuleInfo>
+		<ModuleName value="AndroidAuto"/>
+		<MajorVersion value="4"/>
+		<MinorVersion value="0"/>
+		<ReleaseVersion value="0"/>
+	</ModuleInfo>
+	<Connection>
+		<ProbeTimeout value="15"/>
+	</Connection>
+	<CarInfo>
+		<VehicleMake value="ICAR"/>
+		<VehicleModel value="ICAR"/>
+		<VehicleYear value="2019"/>
+		<HeadUnitMake value="ICAR"/>
+		<HeadUnitModel value="ICAR"/>
+		<HeadUnitSwBuild value="ICAR"/>
+		<HeadUnitSwVersion value="0.1"/>
+	</CarInfo>
+	<DisplayWindow><!-- Head Unit side configuration-->
+		<X_Coordinate value="0"/>
+		<Y_Coordinate value="0"/>
+		<DisplayWidth value="1024"/>
+		<DisplayHeight value="600"/>
+		<Auxiliary_X_Coordinate value="10"/>
+		<Auxiliary_Y_Coordinate value="20"/>
+		<Auxiliary_DisplayWidth value="1024"/>
+		<Auxiliary_DisplayHeight value="600"/>
+		<RemoteDisplayWidth value="1024"/>
+		<RemoteDisplayHeight value="600"/>
+		<Remotefps value="30"/>
+	</DisplayWindow>
+	<AudioGain>
+		<PgaLeft value="0.0"/>
+		<PgaRight value="0.0"/>
+		<OpLeft value="27.5"/>
+		<OpRight value="27.5"/>
+	</AudioGain>
+	<Display><!-- Phone side configuration-->
+		<DisplayWidth value="154"/><!-- Physical width-->
+		<DisplayHeight value="87"/><!-- Physical height-->
+		<PixelAspectRatioE4 value="-1"/><!-- need use (Pixel Aspect Ratio Calculator.xlsx) to calculate, and result need multiply 10000, -1 means will use standard resolution to auto calculate -->
+		<ViewingDistance value="950"/>
+		<VideoCodecResolution value="0"/>
+		<SupportAuxiliaryNav value="false"/>
+		<Resolution480P value="true"><!-- fps: 30 or 60-->
+			<fps value="60"/>
+			<WidthMargin value="0"/>
+			<HeightMargin value="0"/>
+			<Density value="166"/>
+			<RealDensity value="140"/>
+		</Resolution480P>
+		<Resolution720P value="false">
+			<fps value="60"/>
+			<WidthMargin value="0"/>
+			<HeightMargin value="0"/>
+			<Density value="166"/>
+			<RealDensity value="140"/>
+			<VerticalScreenWidthMargin value="480"/>
+			<VerticalScreenHeightMargin value="896"/>
+			<VerticalScreenDensity value="240"/>
+			<VerticalScreenRealDensity value="167"/>
+		</Resolution720P>
+		<Resolution1080P value="false">
+			<fps value="60"/>
+			<WidthMargin value="76"/>
+			<HeightMargin value="0"/>
+			<Density value="380"/>
+			<RealDensity value="175"/>
+			<VerticalScreenWidthMargin value="0"/>
+			<VerticalScreenHeightMargin value="0"/>
+			<VerticalScreenDensity value="240"/>
+			<VerticalScreenRealDensity value="167"/>
+		</Resolution1080P>
+		<ClusterConfig value="false">
+			<Resolution value="1"/>
+			<fps value="60"/>
+			<WidthMargin value="80"/>
+			<HeightMargin value="60"/>
+			<Density value="213"/>
+			<RealDensity value="133"/>
+			<PixelAspectRatioE4 value="10000"/>
+			<WidthContentInset value="10"/>
+			<HeightContentInset value="20"/>
+			<WidthStableContentInset value="30"/>
+			<HeightStableContentInset value="40"/>
+		</ClusterConfig>
+		<AuxiliaryConfig value="false">
+			<Resolution value="1"/>
+			<fps value="30"/>
+			<WidthMargin value="0"/>
+			<HeightMargin value="0"/>
+			<Density value="214"/>
+			<RealDensity value="134"/>
+			<PixelAspectRatioE4 value="10001"/>
+			<WidthContentInset value="0"/>
+			<HeightContentInset value="0"/>
+			<WidthStableContentInset value="0"/>
+			<HeightStableContentInset value="0"/>
+		</AuxiliaryConfig>
+	</Display>
+	<Audio>
+		<MediaStream value="true"/><!-- optional-->
+		<NavStream value="true"/><!-- optional-->
+		<SystemStream value="false"/><!-- optional-->
+	</Audio>
+	<Input>
+		<TouchScreen value="true">
+			<ScreenType value="2"/><!-- capacitive:1 resistive:2-->
+			<ScreenWidth value="1024"/>
+			<ScreenHeight value="600"/>
+		</TouchScreen>
+		<Key value="true">
+			<KEYCODE_HOME value="true"/>
+			<KEYCODE_BACK value="true"/>
+			<KEYCODE_SEARCH value="true"/>
+			<KEYCODE_CALL value="true"/>
+			<KEYCODE_ENDCALL value="true"/>
+			<KEYCODE_MEDIA_NEXT value="true"/>
+			<KEYCODE_MEDIA_PLAY value="true"/>
+			<KEYCODE_MEDIA_PLAY_PAUSE value="true"/>
+			<KEYCODE_MEDIA_PAUSE value="true"/>
+			<KEYCODE_MEDIA_PREVIOUS value="true"/>
+			<KEYCODE_DPAD_UP value="true"/>
+			<KEYCODE_DPAD_DOWN value="true"/>
+			<KEYCODE_DPAD_LEFT value="true"/>
+			<KEYCODE_DPAD_RIGHT value="true"/>
+			<KEYCODE_DPAD_CENTER value="true"/>
+			<KEYCODE_DPAD_UP_LEFT value="false"/>
+			<KEYCODE_DPAD_DOWN_LEFT value="false"/>
+			<KEYCODE_DPAD_UP_RIGHT value="false"/>
+			<KEYCODE_DPAD_DOWN_RIGHT value="false"/>
+			<KEYCODE_MEDIA value="false"/>
+			<KEYCODE_NAVIGATION value="true"/>
+			<KEYCODE_TEL value="true"/>
+			<KEYCODE_ENTER value="true"/>
+			<KEYCODE_ROTARY_CONTROLLER value="true"/>
+		</Key>
+		<ClusterKey value="true">
+			<CLUSTERKEYCODE_DPAD_CENTER value="false"/>
+			<CLUSTERKEYCODE_ROTARY_CONTROLLER value="false"/>
+		</ClusterKey>
+	</Input>
+	<Sensor>
+		<SENSOR_LOCATION value="true"/><!-- if the HU has navigation sensors, must be provided-->
+		<SENSOR_COMPASS value="true"/><!-- if the HU has navigation sensors, must be provided-->
+		<SENSOR_SPEED value="true"/><!-- if the HU has navigation sensors, must be provided-->
+		<SENSOR_RPM value="false"/><!-- optional-->
+		<SENSOR_ODOMETER value="false"/><!-- optional-->
+		<SENSOR_FUEL value="false"/><!-- optional-->
+		<SENSOR_PARKING_BRAKE value="true"/><!-- optional-->
+		<SENSOR_GEAR value="false"/><!-- optional-->
+		<SENSOR_OBDII_DIAGNOSTIC_CODE value="false"/><!-- optional-->
+		<SENSOR_NIGHT_MODE value="true"/><!-- required-->
+		<SENSOR_ENVIRONMENT_DATA value="false"/><!-- optional-->
+		<SENSOR_HVAC_DATA value="false"/><!-- optional-->
+		<SENSOR_DRIVING_STATUS_DATA value="true"/><!-- required-->
+		<SENSOR_DEAD_RECKONING_DATA value="false"/><!-- optional-->
+		<SENSOR_PASSENGER_DATA value="false"/><!-- optional-->
+		<SENSOR_DOOR_DATA value="false"/><!-- optional-->
+		<SENSOR_LIGHT_DATA value="false"/><!-- optional-->
+		<SENSOR_TIRE_PRESSURE_DATA value="false"/><!-- optional-->
+		<SENSOR_ACCELEROMETER_DATA value="true"/><!-- if the HU has navigation sensors, must be provided-->
+		<SENSOR_GYROSCOPE_DATA value="true"/><!-- if the HU has navigation sensors, must be provided-->
+		<SENSOR_GPS_SATELLITE_DATA value="true"/><!-- if the HU has navigation sensors, must be provided-->
+		<FuelType value="false"><!-- At last one type needs to be supported -->
+			<FUEL_TYPE_UNKNOWN value="false"/><!-- if select unknown, other fuel type setting will invalid -->
+			<FUEL_TYPE_UNLEADED value="true"/>
+			<FUEL_TYPE_LEADED value="false"/>
+			<FUEL_TYPE_DIESEL_1 value="false"/>
+			<FUEL_TYPE_DIESEL_2 value="false"/>
+			<FUEL_TYPE_BIODIESEL value="false"/>
+			<FUEL_TYPE_E85 value="false"/>
+			<FUEL_TYPE_LPG value="false"/>
+			<FUEL_TYPE_CNG value="false"/>
+			<FUEL_TYPE_LNG value="false"/>
+			<FUEL_TYPE_ELECTRIC value="false"/>
+			<FUEL_TYPE_HYDROGEN value="false"/>
+			<FUEL_TYPE_OTHER value="false"/>
+		</FuelType>
+		<EvConnectorType value="false"><!-- if support EvConnector, FuelType must support FUEL_TYPE_ELECTRIC -->
+			<EV_CONNECTOR_TYPE_UNKNOWN value="false"/>
+			<EV_CONNECTOR_TYPE_J1772 value="false"/>
+			<EV_CONNECTOR_TYPE_MENNEKES value="false"/>
+			<EV_CONNECTOR_TYPE_CHADEMO value="false"/>
+			<EV_CONNECTOR_TYPE_COMBO_1 value="false"/>
+			<EV_CONNECTOR_TYPE_COMBO_2 value="false"/>
+			<EV_CONNECTOR_TYPE_TESLA_ROADSTER value="false"/>
+			<EV_CONNECTOR_TYPE_TESLA_HPWC value="false"/>
+			<EV_CONNECTOR_TYPE_TESLA_SUPERCHARGER value="false"/>
+			<EV_CONNECTOR_TYPE_GBT value="false"/>
+			<EV_CONNECTOR_TYPE_OTHER value="false"/>
+		</EvConnectorType>
+	</Sensor>
+	<GenericNotification value="false">
+	</GenericNotification>
+	<NavigationStatus value="true">
+		<MinIntervalMs value="500"/><!-- -->
+		<Height value="100"/><!-- Hidth in pixels of the image sent in Navigation Next Turn events-->
+		<Width value="100"/><!-- Width in pixels of the image sent in Navigation Next Turn events ,For best results,it should be equal to Hidth -->
+		<ColourDepthBits value="32"/><!-- Colour depth of the image in bits. Legal values are 8, 16 and 32-->
+		<InstrumentClusterType value="2"/><!-- InstrumentClusterType_IMAGE:1 InstrumentClusterType_ENUM:2-->
+	</NavigationStatus>
+	<MediaPlaybackStatus value="true">
+	</MediaPlaybackStatus>
+	<PhoneStatus value="true">
+	</PhoneStatus>
+</property>

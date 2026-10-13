@@ -1,0 +1,67 @@
+{
+	"voiceWakeupRecordCfg":
+	{
+		"dumpRecordAudio": "false",
+		"dumpAudioDataPath": "/mnt/sda1/dumpaudio",
+		"recordEnableASR": "false",
+		"recordEnableAEC": "true",
+		"recordEnableAGC": "false",
+		"recordEnableBandPass": "false",
+		"recordEnableComfortNoise": "false",
+		"recordEnableNR": "true",
+		"recordEnableEQ": "false",
+		"recordCodecID": 10,
+		"recordSampleRate": 16000,
+		"enableOpGainConfig":"true",
+		"#op_X":"op_left,op_right :0.0, 9.0, 21.0, 27.5, 30.0, 40.0dB",
+		"op_left":30.0,
+		"op_right":30.0,
+		"#pga_X":"pga_left,pga_right:-24.0dB to +6.0dB, each step is 1dB",
+		"pga_left":0.0,
+		"pga_right":0.0,
+		"#uplink_gain":"range is [-12.0, 12.0]",
+		"uplink_gain":12.0
+	},
+	"phoneCallRecordCfg":
+	{
+		"dumpRecordAudio": "false",
+		"dumpAudioDataPath": "/mnt/sda1/dumpaudio",
+		"recordEnableASR": "false",
+		"recordEnableAEC": "true",
+		"recordEnableAGC": "false",
+		"recordEnableBandPass": "false",
+		"recordEnableComfortNoise": "false",
+		"recordEnableNR": "false",
+		"recordEnableEQ": "false",
+		"enableOpGainConfig":"true",
+		"#op_X":"op_left,op_right :0.0, 9.0, 21.0, 27.5, 30.0, 40.0dB",
+		"op_left":30.0,
+		"op_right":30.0,
+		"#pga_X":"pga_left,pga_right:-24.0dB to +6.0dB, each step is 1dB",
+		"pga_left":0.0,
+		"pga_right":0.0,
+		"#uplink_gain":"range is [-12.0, 12.0]",
+		"uplink_gain":12.0
+	},
+	"voiceRecognizationRecordCfg":
+	{
+		"dumpRecordAudio": "false",
+		"dumpAudioDataPath": "/mnt/sda1/dumpaudio",
+		"recordEnableASR": "false",
+		"recordEnableAEC": "true",
+		"recordEnableAGC": "false",
+		"recordEnableBandPass": "false",
+		"recordEnableComfortNoise": "false",
+		"recordEnableNR": "true",
+		"recordEnableEQ": "false",
+		"enableOpGainConfig":"true",
+		"#op_X":"op_left,op_right :0.0, 9.0, 21.0, 27.5, 30.0, 40.0dB",
+		"op_left":30.0,
+		"op_right":30.0,
+		"#pga_X":"pga_left,pga_right:-24.0dB to +6.0dB, each step is 1dB",
+		"pga_left":0.0,
+		"pga_right":0.0,
+		"#uplink_gain":"range is [-12.0, 12.0]",
+		"uplink_gain":12.0
+	}
+}

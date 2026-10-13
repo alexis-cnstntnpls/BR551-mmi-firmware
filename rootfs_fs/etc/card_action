@@ -1,0 +1,103 @@
+#!/bin/sh
+DEV_NAME=$MDEV
+STORAGE_ACTION=$ACTION
+INFO_FILE=/dev/ttyS0
+
+if [ ! -f /dev/blockrom8 ]; then
+	exit 0  # there is no SD Cards if main storage is eMMC
+fi
+
+# preparet buffer for /dev/ttyS0 is not exist when switch_root
+if [ ! -e "$INFO_FILE" ]; then
+    INFO_FILE=/tmp/ttyS0_log
+fi
+
+
+if [ "$MDEV" == "" ]; then
+	echo "`date` MDEV parameter is none" >> $INFO_FILE
+	exit 1
+fi
+
+
+#MBR EX: sdcard0
+#MBR_NAME=`echo "$DEV_NAME"|sed  's/^\(.......\).*/\1/'`
+
+#MBR EX:mmcblk0 mmcblk1
+MBR_NAME=`echo "$DEV_NAME"|sed  's/^\(.......\).*/\1/'`
+
+cnt=`echo $DEV_NAME | wc -c`
+if [ $cnt == 8 ];then
+	MBR=1
+else
+	MBR=0
+fi
+
+MNT_NAME=$DEV_NAME
+echo "$DEV_NAME  MBR:$MBR_NAME $STORAGE_ACTION" >> $INFO_FILE
+
+# if STORAGE_ACTION is NULL, means "mdev -s" is executed
+if [ ! "$STORAGE_ACTION" == "remove" ]; then
+#############   dev add
+	if [ ! "`mount |grep /mnt/"$MNT_NAME"`" == "" ]; then
+			echo "do nothing device exist in mount table" >> $INFO_FILE
+			exit 1
+	fi
+	# check target device name is match and no partition device name stored in /sys/block/(mbr)/
+	if [ "$MBR" == 1 ] && [ ! "`ls /sys/block/"$MBR_NAME"/"$MBR_NAME"*`" == "" ] ; then
+			echo "`date` $DEV_NAME is MBR,out" >> $INFO_FILE
+			exit 1
+	fi
+
+	mkdir -p "/mnt/$MNT_NAME"
+
+	#---- mount vfat
+	echo "TRY vfat /dev/$DEV_NAME   ">> $INFO_FILE
+	/bin/fsck.fat -v -a /dev/${DEV_NAME}>> $INFO_FILE 
+	mount -t vfat -o noatime,nodiratime /dev/${DEV_NAME}  /mnt/${MNT_NAME}
+	if [ $? == 0 ] ;then
+		ln -s  /mnt/$MNT_NAME /media/$MNT_NAME
+		echo "`date` mount vfat /dev/$DEV_NAME to /mnt/$MNT_NAME    success.." >> $INFO_FILE
+		exit 0
+	fi
+
+	#---- check exfat
+	#echo "TRY exfat /dev/$DEV_NAME  ">> $INFO_FILE
+	/bin/exfatfsck /dev/$DEV_NAME
+	#echo "mount exfat /dev/$DEV_NAME">> $INFO_FILE
+	mount -t exfat -o nodev,nosuid,dirsync,noatime,nodiratime  "/dev/$DEV_NAME" "/mnt/$MNT_NAME"
+	if [ $? == 0 ] ;then
+		ln -s  /mnt/$MNT_NAME /media/$MNT_NAME
+		echo "`date` mount exfat /dev/$DEV_NAME to /mnt/$MNT_NAME    success.." >> $INFO_FILE
+		exit 0
+	fi
+
+	#echo "TRY ntfs  /dev/$DEV_NAME ">> $INFO_FILE
+	/bin/ntfsfix "/dev/$DEV_NAME"
+	#echo "mount ntfs /dev/$DEV_NAME">> $INFO_FILE
+	mount -t kntfs3g -o noatime,nodiratime  "/dev/$DEV_NAME" "/mnt/$MNT_NAME" ;
+	if [ $? == 0 ] ;then
+		ln -s  /mnt/$MNT_NAME /media/$MNT_NAME
+		echo "`date` mount kntfs3g /dev/$DEV_NAME to /mnt/$MNT_NAME    success.." >> $INFO_FILE
+		exit 0
+	fi
+
+	echo "mount  /dev/$DEV_NAME to /mnt/$MNT_NAME FAIL">>$INFO_FILE
+	rmdir /mnt/$MNT_NAME
+else
+#############   dev remove
+	# check target device name is match and no partition device name stored in /sys/block/(mbr)/
+	if [ "$MBR" == 1 ] && [ ! "`ls /sys/block/"$MBR_NAME"/"$MBR_NAME"*`" == "" ] ; then
+			# avoid to umount MBR
+			exit 1
+	fi
+
+	if ! umount -l "/mnt/$MNT_NAME" ; then
+			echo "`date` umount /mnt/$MNT_NAME    fail.." >> $INFO_FILE
+	else
+			rm -rf "/mnt/$MNT_NAME"
+			rm -rf "/media/$MNT_NAME"
+			echo "`date` umount /mnt/$MNT_NAME    success.." >> $INFO_FILE
+			# diskEvt send /dev/$DEV_NAME REMOVE
+	fi
+fi
+

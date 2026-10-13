@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?Declaration Don't modify the file manually,  its created automaticlly?>
+<UploadThreshold>
+  <Beta>
+    <Total maxTotalSize="102400" minFreeDisk="51200" eventid="1024" runningLog="512000" privateLog="0" ueLog="0" extraWifi="20971520" extraData="0" maxPackSize="-1" maxDailyCountPerEvent="100"/>
+    <Event eventId="906000001" maxDailyCount="1000"/>
+  </Beta>
+  <Commercial>
+    <Total maxTotalSize="32768" minFreeDisk="0" eventid="1024" runningLog="0" privateLog="0" ueLog="0" extraWifi="5120" extraData="0" maxPackSize="2048" maxDailyCountPerEvent="20"/>
+    <Event eventId="906000001" maxDailyCount="200"/>
+  </Commercial>
+</UploadThreshold>

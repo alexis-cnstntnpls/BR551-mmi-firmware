@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+    <moduleInfo>
+        <majorVersion value="1" />
+        <minorVersion value="0" />
+        <releaseVersion value="2" />
+    </moduleInfo>
+    <tracks>
+        <!-- CarPlay -->
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarPlayMedia" />
+            <streamType value="media" />
+            <duck value="true" />
+            <channelMap value="LF|RF" /> <!-- LF:Left Front, CF:Center Front, RF:Right Front, LS:Left Surround, RS:Right Surround, LFE:Low Frequency Effects -->
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarPlayMainBuffered" />
+            <streamType value="media" />
+            <duck value="true" />
+            <channelMap value="LF|RF" /> <!-- LF:Left Front, CF:Center Front, RF:Right Front, LS:Left Surround, RS:Right Surround, LFE:Low Frequency Effects -->
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarPlayAlert" />
+            <streamType value="ringtone" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+CarPlayTelephony" />
+            <streamType value="phone" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarPlayTelephony" />
+            <streamType value="phone" />
+            <duck value="true" />
+            <channelMap value="LF|RF" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarPlaySpeech" />
+            <streamType value="voice" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarPlayDefault" />
+            <streamType value="other" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarPlayAuxSpeech" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarPlayAlt" />
+            <streamType value="voice" />
+            <duck value="false" />
+            <channelMap value="LF|RF" />
+            <mixer value = "1" /> <!-- 0:before Front APP      1:after Front APP G   default:0-->
+        </track>
+
+        <!-- AndroidAuto-->
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+AndroidAutoMedia" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+AndroidAutoAlter" />
+            <streamType value="voice" />
+            <duck value="false" />
+            <channelMap value="LF|RF" />
+            <mixer value = "0" />
+        </track>
+
+        <!-- hicar-->
+       <track>
+            <tag value="auxiliary" />
+            <name value="hicar_voice_callspeaker10" />
+            <streamType value="phone" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_voice_callspeaker11" />
+            <streamType value="phone" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_systemspeaker10" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_systemspeaker11" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_ringspeaker10" />
+            <streamType value="ringtone" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_ringspeaker11" />
+            <streamType value="ringtone" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_musicspeaker10" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_musicspeaker11" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_alarmspeaker10" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_alarmspeaker11" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_notificationspeaker10" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_notificationspeaker11" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_bt_scospeaker10" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_bt_scospeaker11" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_system_enspeaker10" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_system_enspeaker11" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_dtmfspeaker10" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_dtmfspeaker11" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_ttsspeaker10" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_ttsspeaker11" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_accspeaker10" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_accspeaker11" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_voice_callmodemspeaker10" />
+            <streamType value="phone" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_voice_callmodemspeaker11" />
+            <streamType value="phone" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_invalidedspeaker10" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="hicar_invalidedspeaker11" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+
+        <!-- CarLink-->
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarLinkIpCall" />
+            <streamType value="phone" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+CarLinkModemCall" />
+            <streamType value="phone" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+CarLinkAiAssistant" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarLinkRing" />
+            <streamType value="other" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarLinkNotification" />
+            <streamType value="other" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarLinkTts" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarLinkSystem" />
+            <streamType value="other" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+CarLinkMusic" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarLinkMicrophone" />
+            <streamType value="other" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+CarLinkNum" />
+            <streamType value="other" />
+            <duck value="true" />
+        </track>
+
+        <!-- bt-->
+        <track>
+            <tag value="main" />
+            <name value="S+BtMusic" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+BtPhone" />
+            <streamType value="phone" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+BtPcmPhone" />
+            <streamType value="phone" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="BT_PHONECALL_Track" />
+            <streamType value="phone" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="BT_RINGTONE_Track" />
+            <streamType value="ringtone" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="BT_AUDIO_Track" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+
+        <!-- CarLife-->
+        <track>
+            <tag value="main" />
+            <name value="S+CarLife" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="alternative" />
+            <name value="S+CarLife" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+
+        <!-- AirPlay-->
+        <track>
+            <tag value="main" />
+            <name value="S+AirPlayMedia" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+AirPlayMedia" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+
+        <!-- keytone-->
+        <track>
+            <tag value="auxiliary" />
+            <name value="S+QSound" />
+            <streamType value="voice" />
+            <duck value="false" />
+            <channelMap value="LF|RF" />
+            <mixer value = "1" />
+        </track>
+        <track>
+            <tag value="alternative" />
+            <name value="QtOutput" />
+            <streamType value="voice" />
+            <duck value="false" />
+        </track>
+
+        <!-- other-->
+        <track>
+            <tag value="main" />
+            <name value="S+FilePlayer" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+DiscPlayer" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+AuxIn" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+Mic" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+GPS" />
+            <streamType value="voice" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="alternative" />
+            <name value="S+WebLink" />
+            <streamType value="media" />
+            <duck value="false" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+IPod" />
+            <streamType value="media" />
+            <duck value="true" />
+        </track>
+        <track>
+            <tag value="main" />
+            <name value="S+IosMirror" />
+            <streamType value="media" />
+        </track>
+        <track>
+            <tag value="auxiliary" />
+            <name value="testStream" />
+            <streamType value="media" />
+            <duck value="false" />
+            <mixer value = "1" />
+        </track>
+    </tracks>
+</property>

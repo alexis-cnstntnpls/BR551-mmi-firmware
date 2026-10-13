@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# author: PoChou Chen
+#
+
+i=0
+BASE=0x9C000000
+group=0
+
+if [ -z "$1" ]; then
+	group=0
+else
+	group=$1
+fi
+
+while [ "$i" != "32" ]
+do
+	printf "Read G%d.%d = 0x%08x (%d)\n" $group $i `devmem $(($BASE+$group*32*4+$i*4)) 32` `devmem $(($BASE+$group*32*4+$i*4)) 32`
+        i=$(($i+1))
+done

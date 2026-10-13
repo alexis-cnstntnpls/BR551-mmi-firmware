@@ -1,0 +1,24 @@
+#Action init
+#qt/td environment please set at init.gui.*.rc
+on init
+    #Setup env variable for system
+    export LD_HWCAP_MASK 0x00000000
+    export HOME /root
+
+    export SHOW_GEMINI_TIMESTAMP 0
+
+    # set hostname as Gemini
+    hostname Gemini
+
+    #directFB
+    export DFBARGS pixelformat=ARGB,fbdev=/dev/fb0,no-cursor-updates,vsync-after,linux-input-devices=tslib,tslib-devices=/dev/input/event3,quiet,flip-wait,wm-fullscreen-updates,module-dir=/usr/local/lib/directfb-1.6-0-pure
+    export ALLOC_NO_PRINT 1
+    export DFB_CRASH_OUTPUT /media/flash/nvm/dfb_crash.dump
+
+    #export GST_PLUGIN_PATH /usr/local/lib/gstreamer-1.0
+    #enable new main audio management for BT phone
+    export AUDIO_MAIN_STREAM_ID 1
+    export USE_NEW_MAIN_AUDIO_SOURCE_MANAGEMENT 1
+
+    #ASLR
+    write /proc/sys/kernel/randomize_va_space 0

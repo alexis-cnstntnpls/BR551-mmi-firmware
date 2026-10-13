@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# author: PoChou Chen
+#
+
+BASE=0x9C000000
+group=0
+index=0
+value=0
+
+if [ -z "$1" ]; then
+	group=0
+else
+	group=$1
+fi
+
+if [ -z "$2" ]; then
+	index=0
+else
+	index=$2
+fi
+
+if [ -z "$3" ]; then
+	value=0
+else
+	value=$3
+fi
+
+devmem $(($BASE+$group*32*4+$index*4)) 32 $value
+
+printf "write register G%d.%d = 0x%08x (%d)\n" $group $index `devmem $(($BASE+$group*32*4+$index*4)) 32`  `devmem $(($BASE+$group*32*4+$index*4)) 32`

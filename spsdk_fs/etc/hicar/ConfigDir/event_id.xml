@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?Declaration Don't modify the file manually,  its created automaticlly?>
+<Entry>
+  <Event id="906000001" FaultType="STATICS" FaultLevel="IMPORTANT" PrivacyLevel="PUBLIC">
+    <Param id="0" name="CALLERPACKAGE" type="varchar" length="64"/>
+    <Param id="1" name="SERVICE" type="varchar" length="32"/>
+    <Param id="2" name="VERSION" type="varchar" length="64"/>
+    <Param id="3" name="APINAME" type="varchar" length="64"/>
+    <Param id="4" name="COSTTIME" type="int"/>
+    <Param id="5" name="TOTALCNT" type="int"/>
+    <Param id="6" name="FAILCNT" type="int"/>
+    <Param id="7" name="RESULT" type="class" arrayLength="20" classID="906000002"/>
+    <Param id="8" name="BEGINTIME" type="int"/>
+    <Param id="9" name="PERIOD" type="int"/>
+  </Event>
+  <Event id="906000002" FaultType="SUBCLASS" FaultLevel="IMPORTANT" PrivacyLevel="PUBLIC">
+    <Param id="0" name="CODE" type="int"/>
+    <Param id="1" name="COUNT" type="int"/>
+  </Event>
+  <Event id="906001001" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="ERRORTYPE" type="int"/>
+  </Event>
+  <Event id="906002000" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="ERRCODE" type="int"/>
+    <Param id="1" name="SUBERRCODE" type="int"/>
+    <Param id="2" name="EXTERRINFO" type="int"/>
+    <Param id="3" name="VERSION" type="varchar" length="50"/>
+    <Param id="4" name="APK" type="varchar" length="256"/>
+    <Param id="5" name="AUTHMODE" type="int"/>
+    <Param id="6" name="DEVINFO" type="class" classID="906002006"/>
+    <Param id="7" name="WIFIINFO" type="class" classID="906002007"/>
+  </Event>
+  <Event id="906002001" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="ERRCODE" type="int"/>
+    <Param id="1" name="SUBERRCODE" type="int"/>
+    <Param id="2" name="EXTERRINFO" type="int"/>
+    <Param id="3" name="VERSION" type="varchar" length="50"/>
+    <Param id="4" name="APK" type="varchar" length="256"/>
+    <Param id="5" name="DEVINFO" type="class" classID="906002006"/>
+    <Param id="6" name="WIFIINFO" type="class" classID="906002007"/>
+  </Event>
+  <Event id="906002002" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="ERRCODE" type="int"/>
+    <Param id="1" name="SUBERRCODE" type="int"/>
+    <Param id="2" name="INPUTCATEGORY" type="int"/>
+    <Param id="3" name="INPUTTYPE" type="int"/>
+    <Param id="4" name="SCREENHEIGHT" type="int"/>
+    <Param id="5" name="SCREENWIDTH" type="int"/>
+    <Param id="6" name="REMOTEHEIGHT" type="int"/>
+    <Param id="7" name="REMOTEWIDTH" type="int"/>
+    <Param id="8" name="ISSUPPORTUBIC" type="tinyint"/>
+    <Param id="9" name="ISSUPPORTGENERIC" type="tinyint"/>
+    <Param id="10" name="ISSUPPORTVENDOR" type="tinyint"/>
+    <Param id="11" name="VERSION" type="varchar" length="50"/>
+    <Param id="12" name="APK" type="varchar" length="256"/>
+    <Param id="13" name="DEVINFO" type="class" classID="906002006"/>
+    <Param id="14" name="WIFIINFO" type="class" classID="906002007"/>
+  </Event>
+  <Event id="906002003" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="ERRCODE" type="int"/>
+    <Param id="1" name="ACTION" type="int"/>
+    <Param id="2" name="PLAYER" type="varchar" length="256"/>
+    <Param id="3" name="MEDIATYPE" type="int"/>
+    <Param id="4" name="MIMETYPE" type="int"/>
+    <Param id="5" name="VERSION" type="varchar" length="100"/>
+    <Param id="6" name="DEVINFO" type="class" classID="906002006"/>
+    <Param id="7" name="WIFIINFO" type="class" classID="906002007"/>
+  </Event>
+  <Event id="906002004" FaultType="STATICS" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="APK" type="varchar" length="256"/>
+    <Param id="1" name="CONNPERFCNT" type="int" arrayLength="10"/>
+    <Param id="2" name="PLAYCTRLCNT" type="int" arrayLength="50"/>
+    <Param id="3" name="MIRRORFRAMECNT" type="int" arrayLength="10"/>
+  </Event>
+  <Event id="906002005" FaultType="STATICS" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="APK" type="varchar" length="256"/>
+    <Param id="1" name="VERSION" type="varchar" length="100"/>
+    <Param id="2" name="CONNCNT" type="int"/>
+    <Param id="3" name="CONNSUCCCNT" type="int"/>
+    <Param id="4" name="CONNECTINGDURA" type="int"/>
+    <Param id="5" name="CONNECTEDDURA" type="int"/>
+    <Param id="6" name="PLAYCTRLCNT" type="int"/>
+    <Param id="7" name="PLAYCTRLSUCCCNT" type="int"/>
+    <Param id="8" name="PLAYCTRLDURA" type="int"/>
+    <Param id="9" name="REMOTECTRLCNT" type="int"/>
+    <Param id="10" name="REMOTECTRLSUCCCNT" type="int"/>
+    <Param id="11" name="REMOTECTRLDURA" type="int"/>
+  </Event>
+  <Event id="906002006" FaultType="SUBCLASS" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="DEVTYPE" type="int"/>
+    <Param id="1" name="DEVSUBTYPE" type="int"/>
+    <Param id="2" name="CONNECTTYPE" type="int"/>
+    <Param id="3" name="CAPABILITY" type="int"/>
+  </Event>
+  <Event id="906002007" FaultType="SUBCLASS" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="FREQ" type="int"/>
+    <Param id="1" name="RSSI" type="int"/>
+    <Param id="2" name="LINKSPEED" type="int"/>
+  </Event>
+  <Event id="906003000" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="DEVICETYPE" type="int"/>
+    <Param id="1" name="APPNAME" type="varchar" length="64"/>
+    <Param id="2" name="PROTOCOL" type="int"/>
+    <Param id="3" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906003001" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="BUSINESSID" type="int"/>
+    <Param id="1" name="DEVICETYPE" type="int"/>
+    <Param id="2" name="SERVICETYPE" type="int"/>
+    <Param id="3" name="SERVICEUSETYPE" type="int"/>
+    <Param id="4" name="OPTYPE" type="int"/>
+    <Param id="5" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906003002" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="BUSINESSID" type="int"/>
+    <Param id="1" name="SERVICETYPE" type="int"/>
+    <Param id="2" name="DEVICETYPE" type="int"/>
+    <Param id="3" name="SERVICEUSETYPE" type="int"/>
+    <Param id="4" name="PROTOCOL" type="int"/>
+    <Param id="5" name="OPTYPE" type="int"/>
+    <Param id="6" name="RESULT" type="int"/>
+  </Event>
+  <Event id="906003003" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="BUSINESSID" type="int"/>
+    <Param id="1" name="SERVICETYPE" type="int"/>
+    <Param id="2" name="DEVICETYPE" type="int"/>
+    <Param id="3" name="STATUS" type="int"/>
+  </Event>
+  <Event id="906003004" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="DEVICETYPE" type="int"/>
+    <Param id="1" name="EVENTSOURCE" type="int"/>
+    <Param id="2" name="CHANNELTYPE" type="int"/>
+    <Param id="3" name="EVENTTYPE" type="int"/>
+  </Event>
+  <Event id="906003100" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="SESSIONID" type="int"/>
+    <Param id="1" name="ERRORCODE" type="int"/>
+    <Param id="2" name="NETERROCODE" type="int"/>
+  </Event>
+  <Event id="906003101" FaultType="FAULT" FaultLevel="GENERAL" PrivacyLevel="PROTECTED">
+    <Param id="0" name="OPTYPE" type="int"/>
+    <Param id="1" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906003102" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="SESSIONID" type="int"/>
+    <Param id="1" name="STATUS" type="int"/>
+  </Event>
+  <Event id="906003103" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="SERVICETYPE" type="int"/>
+    <Param id="1" name="STATUS" type="int"/>
+  </Event>
+  <Event id="906003200" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="CAMERAID" type="int"/>
+    <Param id="1" name="OPTYPE" type="int"/>
+    <Param id="2" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906003201" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="CAMERAID" type="int"/>
+    <Param id="1" name="OPTYPE" type="int"/>
+    <Param id="2" name="RESULT" type="int"/>
+  </Event>
+  <Event id="906003220" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="TYPE" type="int"/>
+    <Param id="1" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906003221" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="TYPE" type="int"/>
+    <Param id="1" name="OPTYPE" type="int"/>
+  </Event>
+  <Event id="906003240" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906003260" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="TYPE" type="int"/>
+    <Param id="1" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906003261" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="STATUS" type="int"/>
+    <Param id="1" name="RESULT" type="int"/>
+  </Event>
+  <Event id="906003280" FaultType="FAULT" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="PROTOCOLFILTER" type="int"/>
+    <Param id="1" name="COSTTIME" type="int"/>
+    <Param id="2" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906003281" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="SENSORID" type="int"/>
+    <Param id="1" name="SENSORTYPE" type="int"/>
+    <Param id="2" name="DATARATE" type="int"/>
+    <Param id="3" name="RESOLUTION" type="int"/>
+    <Param id="4" name="REASON" type="int"/>
+    <Param id="5" name="CHANNELTYPE" type="int"/>
+    <Param id="6" name="OPTYPE" type="int"/>
+    <Param id="7" name="RESULT" type="int"/>
+  </Event>
+  <Event id="906003300" FaultType="STATICS" FaultLevel="INFORMATIVE" PrivacyLevel="PROTECTED">
+    <Param id="0" name="STATUS" type="int"/>
+    <Param id="1" name="RESULT" type="int"/>
+  </Event>
+  <Event id="906004000" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="VER" type="varchar" length="16"/>
+    <Param id="1" name="CHANNELID" type="int"/>
+    <Param id="2" name="ERRORCODE" type="int"/>
+    <Param id="3" name="TIMEOUT" type="int"/>
+  </Event>
+  <Event id="906004001" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="VER" type="varchar" length="16"/>
+    <Param id="1" name="CHANNELID" type="int"/>
+    <Param id="2" name="ERRORCODE" type="int"/>
+    <Param id="3" name="BUSINESSID" type="int"/>
+  </Event>
+  <Event id="906004002" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="VER" type="varchar" length="16"/>
+    <Param id="1" name="CHANNELID" type="int"/>
+    <Param id="2" name="CHANNELTYPE" type="int"/>
+    <Param id="3" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906004003" FaultType="FAULT" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="VER" type="varchar" length="16"/>
+    <Param id="1" name="ERRORCODE" type="int"/>
+  </Event>
+  <Event id="906004004" FaultType="STATICS" FaultLevel="IMPORTANT" PrivacyLevel="PROTECTED">
+    <Param id="0" name="VER" type="varchar" length="16"/>
+    <Param id="1" name="CHANNELID" type="int"/>
+    <Param id="2" name="CONNECTNUM" type="int"/>
+    <Param id="3" name="CONNECTSUCCNESSNUM" type="int"/>
+    <Param id="4" name="CONNECTTIMECONSUME" type="int"/>
+  </Event>
+</Entry>

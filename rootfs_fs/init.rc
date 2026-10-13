@@ -1,0 +1,361 @@
+import /init.gui.rc
+import /init.environ.rc
+import /init.platform.rc
+
+on early-init
+
+on init
+    mkdir /tmp/sp
+    mkdir /tmp/sp/log
+    mkdir /tmp/sp/system/
+    mkdir /tmp/sp/system/lib
+    mkdir /tmp/sp/home
+    mkdir /tmp/sp/mnt
+    mkdir /tmp/sp/var
+    mkdir /tmp/sp/usr/
+    mkdir /tmp/sp/usr/local
+    mkdir /tmp/sp/application
+    mkdir /tmp/sp/media/
+    mkdir /tmp/sp/media/flash/
+    mkdir /tmp/sp/media/flash/nvm
+    mkdir /tmp/sp/media/flash/userdata
+    mkdir /tmp/sp/modules
+    mkdir /var/run
+    mkdir /var/lock
+
+on early-boot
+    exec /bin/sh /sbin/sys_setup.sh
+    insmod /usr/local/drivers/evdev.ko
+    insmod /application/drivers/touch-driver.ko
+    export LATERC /usr/local/sdkinfo.rc
+    trigger sdk_laterc
+    export LATERC /application/appinfo.rc
+    trigger app_laterc
+    trigger sdk-boot
+    #init the bootchart start and stop file
+    #write /media/flash/nvm/bootchart-start 30
+    #write /media/flash/nvm/bootchart-stop 0
+
+on sdk-boot
+    start ts_sdkstart
+    start console
+    start watchdog_pet
+    trigger early-drv-boot
+    class_start normal_start
+
+on early-drv-boot
+    insmod /usr/local/drivers/mmc_core.ko
+
+service watchdog_pet /bin/sh /sbin/start_wd.sh
+    console
+    oneshot
+
+#console service
+service console /bin/sh
+    console
+    user root
+    setenv PS1 "\u@\h:\w\$ "
+
+service TouchCali /bin/sh /sbin/start_touchcali.sh
+    console
+    setenv SDK_STEP1_START "init.svc.servicemanager;init.svc.resourcemanager"
+    oneshot
+    class normal_start
+
+service servicemanager /usr/local/bin/servicemanager
+    console
+    class normal_start
+
+service resourcemanager /usr/local/bin/resourcemanager
+    console
+    class normal_start
+
+# PFC Server (Include display service)
+service pfc_server /usr/local/bin/pfc_server
+    console
+    class step1_start
+
+service nwserver /usr/local/bin/networkmanager
+    console
+    setenv HOSTAPD_OPTIMIZE_CONFIG_ACCELERATE_AP_STA_CONNECTION "Y"
+    setenv PEER_DEV_STORE_FILE "/media/flash/nvm/peer_devices.txt"
+    class normal_start
+
+
+on property:ro.start.tdLauncher=1
+    start ts_appstart
+    start tdLauncher
+
+on property:ro.start.ncLauncher=1
+    start ts_appstart
+    start ncLauncher
+
+on property:ro.start.Launcher=1
+    start ts_appstart
+    start Launcher
+
+on property:ro.sdkstep0.start=1
+    #Use mdev to make device nodes
+    write /proc/sys/kernel/hotplug /sbin/mdev
+    exec mdev -s
+    #insmod drivers
+    insmod /usr/local/drivers/mmc_block.ko
+    #insmod /usr/local/drivers/spsdv2.ko
+    insmod /usr/local/drivers/sd_mod.ko
+    #insmod sound driver & usbaudio,this is for ipod usbaudio
+    insmod /usr/local/drivers/soundcore.ko
+    insmod /usr/local/drivers/snd.ko
+    insmod /usr/local/drivers/snd-timer.ko
+    insmod /usr/local/drivers/snd-page-alloc.ko
+    insmod /usr/local/drivers/snd-pcm.ko
+    insmod /usr/local/drivers/snd-rawmidi.ko
+    insmod /usr/local/drivers/snd-hwdep.ko
+    insmod /usr/local/drivers/snd-usbmidi-lib.ko
+    insmod /usr/local/drivers/snd-usb-audio.ko
+    #insmod the hiddevice driver ,this is for hidraw device,now is ipod
+    insmod /usr/local/drivers/usbhid.ko
+    ifup lo
+    write /proc/sys/net/ipv4/tcp_rmem "1048576 2097152 4194304"
+    write /proc/sys/net/core/rmem_default "2097152"
+    write /proc/sys/net/core/rmem_max "2097152"
+    write /proc/sys/net/core/wmem_max "2097152"
+    insmod /usr/local/drivers/iacp_i2c.ko iacp_addr=0x22
+    #start services
+    class_start step1_start
+
+on property:ro.sdkstep1.start=1
+    setprop ro.sdkstep0.start 1
+    trigger start_accessory
+
+on property:ro.sdklate.start=1
+    insmod /usr/local/drivers/fuse.ko
+    insmod /usr/local/drivers/82dtr.ko
+    class_start late_start
+    exec /usr/local/bin/usb_uphy --vbus_off
+    insmod /usr/local/drivers/sp-bc.ko
+    insmod /usr/local/drivers/ehci-hcd.ko
+    insmod /usr/local/drivers/ohci-hcd.ko
+    exec  /usr/local/bin/usb_uphy --init_uphy
+    exec /usr/local/bin/volume_control --startup
+    exec /usr/local/bin/usb_control --startup
+    exec /usr/local/bin/device_control --startup
+    exec /usr/local/bin/usb_uphy --vbus_on
+
+on property:ro.systemstartup.done=1
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor ondemand
+    start mcusrv
+
+on property:fpserver.start=1
+    start fpserver
+
+on property:psserver.start=1
+    start psserver
+
+on property:carlifeserver.start=1
+    start carlifeserver
+
+on property:aaserver.start=1
+    start aaserver
+
+on property:carplayserver.start=1
+    start carplayserver
+
+on property:iapserver.start=1
+    start iapserver
+
+on property:iosmirrorserver.start=1
+    start iosmirrorserver
+
+on property:AutolinkService.start=1
+    start AutolinkService
+
+on property:mdnsd_daemon.start=1
+    start mdnsd_daemon
+
+on property:wmserver.start=1
+    start wmserver
+
+on property:AirPlayService.start=1
+    start AirPlayService
+
+on property:HiCarService.start=1
+    start HiCarService
+
+#Launcher service
+service ncLauncher /bin/sh /sbin/sys_app.sh
+    console
+    setenv SDK_LATE_START "init.svc.bluetooth_server;init.svc.asserver;init.svc.vsserver;init.svc.iapserver"
+    setenv SDK_STEP1_START "init.svc.servicemanager;init.svc.resourcemanager;init.svc.deviceserver"
+    disabled
+    oneshot
+
+service Launcher /application/bin/Launcher
+    console
+    setenv SDK_LATE_START "init.svc.bluetooth_server;init.svc.asserver;init.svc.vsserver;init.svc.iapserver"
+    setenv SDK_STEP1_START "init.svc.servicemanager;init.svc.resourcemanager;init.svc.deviceserver"
+    disabled
+    oneshot
+
+service tdLauncher /application/tdLauncher/bin/Launcher
+    console
+    setenv SDK_LATE_START "init.svc.logserver;init.svc.asserver;init.svc.bluetooth_server;init.svc.vsserver;init.svc.carlifeserver;init.svc.aaserver;init.svc.carplayserver;init.svc.iapserver;init.svc.iosmirrorserver;init.svc.AutolinkService;init.svc.AirPlayService;"
+    setenv SDK_STEP1_START "init.svc.servicemanager;init.svc.resourcemanager;init.svc.deviceserver;"
+    disabled
+    oneshot
+
+service mcusrv /application/bin/mcusrv 1 115200
+    console
+#logcat service
+service logserver /usr/local/bin/log_server
+    console
+    setenv LOG_DEFAULT_CFG "/application/etc/log_service/log_default.cfg"
+    setenv STORAGE_PATH "media/flash/nvm"
+    class step1_start
+
+# VideoService
+service vsserver /usr/local/bin/vs_server
+    console
+    class late_start
+
+service asserver /usr/local/bin/as_server
+    console
+    class step1_start
+
+# VideoIn Server
+service videoin_server /usr/local/bin/videoin_server
+    console
+    class step1_start
+
+# DiscPlayer Server
+service discserver /usr/local/bin/discplayer_server
+    console
+    disabled
+    oneshot
+
+service bluetooth_server /usr/local/bin/bluetooth_server
+    console
+    class normal_start
+
+service deviceserver /usr/local/bin/device_server
+    console
+    class step1_start
+
+#service thermalserver /usr/local/bin/thermal
+#    console
+#    class late_start
+
+#dpm service
+#service dpmserver /usr/local/bin/dpm -d 0 -s 1 -w 1 -r 1 -q 1
+#    console
+#    class late_start
+
+#service fpserver /usr/local/bin/fileplayer_server
+#    console
+#    class late_start
+
+#service discserver /usr/local/bin/discplayer_server
+#    console
+#    disabled
+
+# tdboard-auth
+service tdboard-auth /tdGUI/usr/bin/tdboard-auth
+    console
+    disabled
+    oneshot
+
+# PlaybackService
+service psserver /usr/local/bin/ps_server
+    console
+    disabled
+    oneshot
+
+service mdnsd_daemon /usr/local/bin/mdnsd
+    console
+    disabled
+
+service aaserver /usr/local/bin/aa_manager_service
+    console
+    disabled
+    oneshot
+
+service carplayserver /usr/local/bin/apple_carplay_server
+    setenv APPLE_AUTH_CACHE_PATH "/media/flash/nvm"
+    console
+    disabled
+    oneshot
+
+service iapserver /usr/local/bin/apple_iap_server
+    setenv APPLE_AUTH_CACHE_PATH "/media/flash/nvm"
+    console
+    disabled
+    oneshot
+
+service carlifeserver /usr/local/bin/carlife_server
+    console
+    disabled
+    oneshot
+
+service AutolinkService /usr/local/bin/autolink_server
+    console
+    disabled
+    oneshot
+
+service iosmirrorserver /usr/local/bin/iosmirror_server
+    console
+    disabled
+    oneshot
+
+service AirPlayService /usr/local/bin/airplay_server
+    console
+    disabled
+    oneshot
+
+service airplayacc /usr/local/bin/airplay_accessory
+    console
+    disabled
+    oneshot
+
+service HiCarService /usr/local/bin/hicar_server
+    console
+    disabled
+
+service NCMInit /bin/sh /usr/local/bin/Usbnet_ncm.sh
+    console
+    oneshot
+
+on start_accessory
+    start mdnsd_daemon
+    start iapserver
+    start NCMInit
+
+service gpsserver /usr/local/bin/gps_server -r
+    console
+    disabled
+
+service gpsmain /usr/local/bin/gps_main
+    console
+    disabled
+
+service locserver /usr/local/bin/location_server
+    console
+    disabled
+
+on gps_start
+    insmod /usr/local/drivers/gps.ko
+    start gpsserver
+    start gpsmain
+    start locserver
+
+service ts_sdkstart /usr/local/bin/timestamp "SDK Start !" 409000
+    console
+    disabled
+    oneshot
+
+service ts_appstart /usr/local/bin/timestamp "APPLICATION Start !" 1409000
+    console
+    disabled
+    oneshot
+
+on property:ro.wifi.start=1
+    insmod /usr/local/drivers/cfg80211.ko
+    insmod /usr/local/drivers/8811cu.ko rtw_country_code=CN

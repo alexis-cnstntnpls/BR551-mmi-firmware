@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resources>
+	<Resource name="ResourceA"/>
+	<Resource name="ResourceB"/>
+	<Resource name="ResourceC"/>
+	<Resource name="ResourceD"/>
+	<Resource name="ResourceE"/>
+	<Resource name="ResourceF"/>
+	<Resource name="ResourceG"/>
+	<Resource name="ResourceO"/>
+	<Resource name="ResourceP"/>
+	<Resource name="ResourceQ"/>
+	<Resource name="ResourceR"/>
+	<Resource name="ResourceW"/>
+	<Resource name="ResourceX"/>
+	<Resource name="ResourceY"/>
+	<Resource name="ResourceH">
+		<ResourceDependence name="ResourceB"/>
+		<ResourceDependence name="ResourceC"/>
+	</Resource>
+	<Resource name="ResourceI">
+		<ResourceDependence name="ResourceC"/>
+		<ResourceDependence name="ResourceD"/>
+		<ResourceDependence name="ResourceE"/>
+	</Resource>
+	<Resource name="ResourceJ">
+		<ResourceDependence name="ResourceD"/>
+		<ResourceDependence name="ResourceE"/>
+		<ResourceDependence name="ResourceF"/>
+	</Resource>
+	<Resource name="ResourceK">
+		<ResourceDependence name="ResourceE"/>
+		<ResourceDependence name="ResourceF"/>
+		<ResourceDependence name="ResourceG"/>
+	</Resource>
+	<Resource name="ResourceL">
+		<ResourceDependence name="ResourceH"/>
+		<ResourceDependence name="ResourceI"/>
+	</Resource>
+	<Resource name="ResourceM">
+		<ResourceDependence name="ResourceH"/>
+		<ResourceDependence name="ResourceI"/>
+		<ResourceDependence name="ResourceJ"/>
+	</Resource>
+	<Resource name="ResourceN">
+		<ResourceDependence name="ResourceI"/>
+		<ResourceDependence name="ResourceK"/>
+	</Resource>
+	<Resource name="ResourceS">
+		<ResourceDependence name="ResourceO"/>
+		<ResourceDependence name="ResourceP"/>
+	</Resource>
+	<Resource name="ResourceT">
+		<ResourceDependence name="ResourceO"/>
+		<ResourceDependence name="ResourceQ"/>
+	</Resource>
+	<Resource name="ResourceV">
+		<ResourceDependence name="ResourceS"/>
+		<ResourceDependence name="ResourceT"/>
+	</Resource>
+	<Resource name="ResourceU">
+		<ResourceDependence name="ResourceP"/>
+		<ResourceDependence name="ResourceR"/>
+	</Resource>
+	<Resource name="ResourceZ">
+		<ResourceDependence name="ResourceW"/>
+		<ResourceDependence name="ResourceX"/>
+		<ResourceDependence name="ResourceY"/>
+	</Resource>
+	<Resource name="ResourceAA">
+		<ResourceDependence name="ResourceB"/>
+		<ResourceDependence name="ResourceW"/>
+	</Resource>
+	<Resource name="ResourceLN">
+		<ResourceDependence name="ResourceL"/>
+		<ResourceDependence name="ResourceN"/>
+	</Resource>
+	<Resource name="ResourceLM">
+		<ResourceDependence name="ResourceL"/>
+		<ResourceDependence name="ResourceM"/>
+	</Resource>
+	<Resource name="ResourceMN">
+		<ResourceDependence name="ResourceM"/>
+		<ResourceDependence name="ResourceN"/>
+	</Resource>
+	<Resource name="ResourceFL">
+		<ResourceDependence name="ResourceLN"/>
+		<ResourceDependence name="ResourceMN"/>
+	</Resource>
+</Resources>

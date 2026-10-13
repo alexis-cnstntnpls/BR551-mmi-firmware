@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+	<AoaFeature>
+		<ManuFacturer value="Android"/>
+		<Model value="Android Auto"/>
+		<Description value="Android Auto"/>
+		<Version value="1.0."/>
+		<Url value="http://www.android.com/auto"/>
+		<Serial value="0000000012345678"/>
+		<Mode value="3"/>
+		<Name value="aoa-skel%d"/>
+		<PPS value="1"/>
+	</AoaFeature>
+</property>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property>
+	<DeviceDir value="/dev"/>                     <!-- Device path -->
+	<MountDir value="/mnt"/>                      <!-- Mount path -->
+	<AccessDir value="/media"/>                   <!-- Access path -->
+	<CountOfPartitionType value="2"/>             <!-- Count of partition types,Default=2: sd[a-z]* and mmcblk[0-9]* -->
+	<PartitionType1Regex value="sd[a-z]*"/>       <!-- Partition type sd[a-z]* -->
+	<PartitionType2Regex value="mmcblk[0-9]*"/>   <!-- Partition type mmcblk[0-9]* -->
+	<BasicOption value="-o iocharset=utf8 -o nodev -o nosuid -o dirsync -o noatime -o nodiratime"/> <!-- Mount flag,default:MS_NODEV | MS_NOSUID | MS_DIRSYNC | MS_NOATIME | MS_NODIRATIME -->
+	<FileSystem>
+		<exfat value = "true">
+			<command value = "mount.exfat"/>      <!-- If not set, default "mount" -->
+			<type value = ""/>                    <!-- it's exfat, don't need define type. If not set, default "-t [fs type]" -->
+			<option value = ""/>                  <!-- Special configures. e.g. "-o ro" for read only -->
+		</exfat>
+	</FileSystem>
+</property>

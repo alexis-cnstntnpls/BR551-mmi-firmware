@@ -1,0 +1,30 @@
+参数设置说明：
+
+1. port 是蓝牙串口设备路径，一般不修改，客户若改了蓝牙连接串口才需要改。
+
+2，pio，该数值表示连接蓝牙enable/reset pin的平台端gpio 口的数值。请按照实际填写，68-u公版是88.
+
+3.version01~03对应a版，roma，romb，对应patch的版本，这个按照提供来同步即可。
+
+4.db_level 0,1表示是否打印，15表示可以抓取hci串口数据。
+    一般会要求在提报问题时候，提供一份linux log 和btsnoop.log 文件。
+     
+    bt lib 打开hci log 方法：
+    
+        1.找到project 中TL.INI 文件。
+    
+        2.将TL.INI 文件中db_level 变量设置为15。
+    
+        3.编译sdk,rom 将TL.INI 文件打包链接到BIN 文件中。
+   
+    实验抓取方法：
+    
+        1.开机测试到问题现象，停止测试。
+   
+        2.在进程中的命令行输入，cd media/flash/nvm/，找到btsnoop.log
+   
+        3.通过cp 命令拷贝到插在平台U 盘中。
+   
+        4.将当前linux log 和btsnoop.log 打包一起邮件发布出来就完成啦！！！
+
+5.tx_power 是controller发射功率设置，范围0~7，默认5.

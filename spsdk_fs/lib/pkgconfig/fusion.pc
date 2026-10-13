@@ -1,0 +1,11 @@
+prefix=/home/l.wang/prebuilt_1118/prebuiltsrc/thirdparty/DirectFB-1.6.3/_install//usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Fusion IPC
+Description: High Level IPC Mechanisms
+Version: 1.6.3
+Requires: direct
+Libs: -L${libdir} -lfusion
+Cflags: -I${prefix}/include/directfb
